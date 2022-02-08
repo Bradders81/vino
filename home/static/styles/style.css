@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Festive&family=Roboto&display=swap');
+
+/* 
+font-family: 'Festive', cursive; (Logo)
+font-family: 'Roboto', sans-serif; (main family used)
+*/
+
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    color: #000;
+    font-family: 'Roboto', sans-serif;
+    
+
+}
+
+#logo {
+    font-family: 'Festive', cursive;
+    color: #8a0c0c;
+    font-size: 80px;
+    margin: 10px;
+    padding-left: 10px;
+    text-decoration: none;
+    
+    letter-spacing: 2px;
+}
+
+.center {
+    text-align: center;
+}
+
+.search-box {
+    display: inline-block;
+}
+
