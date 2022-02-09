@@ -1,36 +1,99 @@
 @import url('https://fonts.googleapis.com/css2?family=Festive&family=Roboto&display=swap');
 
-/* 
+
+/* ----------------------------------------------------  
 font-family: 'Festive', cursive; (Logo)
 font-family: 'Roboto', sans-serif; (main family used)
-*/
+------------------------------------------------------*/
 
+/*----- Site defaults ----- */
 * {
     margin: 0;
     padding: 0;
     border: 0;
     color: #000;
     font-family: 'Roboto', sans-serif;
-    
-
 }
 
+/* Vino logo in navbar */
 #logo {
     font-family: 'Festive', cursive;
     color: #8a0c0c;
-    font-size: 80px;
-    margin: 10px;
-    padding-left: 10px;
-    text-decoration: none;
+    font-size: 60px;
+     text-decoration: none;
     
     letter-spacing: 2px;
 }
 
+#logo:hover {
+    color: #000;
+    font-weight: 600;
+    }
+
+#hero-img {
+    background: url("../images/hero-image.png") center center;
+    background-size: cover;
+    width: 150;
+    height: 80vh;
+
+}
+
+.cta-container {
+    margin-top: 10%;
+
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    padding: 2em;
+    border-radius: 1em;
+    background: #b1aaaa7c;
+    
+}
+
+#cta {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+   
+    
+}
+
+#btn-cta {
+    
+    text-justify: center;
+    text-align: center;
+    margin: 1em;
+}
+
 .center {
+    
     text-align: center;
 }
 
-.search-box {
-    display: inline-block;
+.free-delivery-msg {
+    font-size: 25px;
+    background-color:#8a0c0c
 }
 
+
+
+nav .navbar-nav li a{
+    color: #8a0c0c!important;
+    }
+
+/*------- Media Queries -----*/
+
+@media screen and (max-width: 450px) {
+
+.free-delivery-msg {
+    font-size: 18px;
+    background-color:#8a0c0c
+}
+
+}
+
+@media screen and (max-width: 325px) {
+.free-delivery-msg {
+    Font-size: 15px;
+}
