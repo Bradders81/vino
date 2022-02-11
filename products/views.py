@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, reverse
+from django.shortcuts import render
 from django.db.models import Q
 from django.contrib import messages
 from .models import Wine
@@ -24,8 +24,6 @@ def products(request):
 
         if not wines:
             messages.error(request, "Nothing matches your search")
-
-            
 
     context = {'wines': wines, }
     return render(request, 'products/products.html', context)

@@ -1,36 +1,40 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
 
-<div class="container">
-	<div class="row ">
-		{% for wine in wines %}
-		<div class="col-12 col-md-4 container">
-			<div class="card h-100 ">
+{% block content %}
+
+<div class=" container-fluid">
+<div class="row">
+				{% for wine in wines %}
+			<div class="col-12 col-md-4 col-lg-3 center">
+		
+			<div class="card h-100 m-4">
 				{% if wine.image %}
-				<img src="{{ wine.image.url }}" class=" card-img-top img fluid" alt=" Bottle of wine" />
+				<img src="{{ wine.image.url }}" class="card-image card-img-top" alt=" Bottle of wine" />
 				{% else %}
-				<img src="/static/images/wines/default.png" class="card-img-top img fluid" alt=" Bottle of wine" />
+				<img src="../../../media/images/default.png" class="card-image" alt=" Bottle of wine" />
 				{% endif %}
-
-				<div class="card-body">
-					<h5>{{ wine.name }}</h5>
-					<p class="card-text">{{ wine.description }}</p>
+				<!-- "card-img-top img fluid -->
+				<div class="card-body-size center">
+					<h6><strong>{{ wine.name }}</strong></h6>
 					<p>Price $ {{wine.price }}</p>
 					<p>Type: {{ wine.type }}</p>
 					<p>Rating: {{wine.rating }}</p>
-					<a href="{% url 'product-info' wine.id %}" class="btn btn-primary"
-						>Info</a
-					>
-					<a href="" class="btn btn-warning"
-						>Add to Cart</a
-					>
+					<div  class="card-btn">
+						<a href="{% url 'product-info' wine.id %}" class="btn btn-danger center ">Info</a>
+						<a href="" class="btn btn-warning center">Add to Cart</a>
+					</div>
+			
+			
 				</div>
 			</div>
 			
-		</div>
 		
-		{% endfor %}
 	</div>
+		{% endfor %}
+	
 </div>
+	
+</section
 
 {% endblock %}
 

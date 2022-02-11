@@ -19,13 +19,15 @@
             <p>Type: {{ bottle.type }}</p>
             <p>Rating: {{ bottle.rating }} / 5</p>
             <p>Price $ {{ bottle.price }}</p>
-            <a href="{% url 'products' %}" class="btn btn-danger"
-            >Back</a>
-        <a href="" class="btn btn-warning"
-            >Add to Cart</a>
+            <a href="{% url 'products' %}" class="btn btn-danger">Back</a>
+            <a href="" class="btn btn-warning">Add to Cart</a>
         </div>
         <div class="col-12 col-md-6 center">
+            {% if bottle.image %}
             <img class="center img-size" src="{{ bottle.image.url }}" alt="Bottle of wine">
+            {% else %}
+            <img src="../../../media/images/default.png" class="center img-size"  alt=" Bottle of wine" />
+            {% endif %}
         </div>
     </div>
 </div>
