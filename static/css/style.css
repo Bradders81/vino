@@ -13,6 +13,7 @@ font-family: 'Roboto', sans-serif; (main family used)
     border: 0;
     color: #000;
     font-family: 'Roboto', sans-serif;
+    box-sizing: border-box;
 }
 
 /* Vino logo in navbar */
@@ -20,7 +21,7 @@ font-family: 'Roboto', sans-serif; (main family used)
     font-family: 'Festive', cursive;
     color: #8a0c0c;
     font-size: 60px;
-     text-decoration: none;
+    text-decoration: none;
     letter-spacing: 2px;
 }
 
@@ -55,40 +56,62 @@ font-family: 'Roboto', sans-serif; (main family used)
 }
 
 #btn-cta {
-    
+
     text-justify: center;
     text-align: center;
     margin: 1em;
 }
 
 .center {
-    
+
     text-align: center;
 }
 
 .free-delivery-msg {
     font-size: 25px;
-    background-color:#8a0c0c
+    background-color: #8a0c0c
 }
 
-nav .navbar-nav li a{
-    color: #8a0c0c!important;
-    }
+nav .navbar-nav li a {
+    color: #8a0c0c !important;
+}
 
+.space {
+    margin-top: 10px;
+    
+}
+/*----- Products Page -----*/
+
+
+
+
+/*------- Product info -------*/
+/* .wine-details {
+
+} */
+
+.img-size {
+    height: 100%;
+    width: auto;
+}
+
+#hr-length {
+    width: 50%;
+}
 
 /*------- Media Queries -----*/
 
 @media screen and (max-width: 450px) {
 
-.free-delivery-msg {
-    font-size: 18px;
-    background-color:#8a0c0c
-}
+    .free-delivery-msg {
+        font-size: 18px;
+        background-color: #8a0c0c;
+    }
 }
 
 @media screen and (max-width: 325px) {
 
-.free-delivery-msg {
-    Font-size: 15px;
-}
+    .free-delivery-msg {
+        Font-size: 15px;
+    }
 }

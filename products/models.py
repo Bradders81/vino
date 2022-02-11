@@ -13,13 +13,15 @@ class Wine(models.Model):
         verbose_name_plural = 'Wine'
 
     name = models.CharField(max_length=100)
-    image = models.ImageField(null=True, blank=True, default="placeholder.png")
+    image = models.ImageField(
+        null=True, blank=True, default='wines/default.png', upload_to='wines/')
     country = models.CharField(max_length=50, null=True, blank=True)
     winery = models.CharField(max_length=50, null=True, blank=True)
     rating = models.DecimalField(max_digits=6, decimal_places=2, default=0)
     price = models.DecimalField(max_digits=6, decimal_places=2)
     type = models.CharField(max_length=50)
     description = models.TextField(null=True, blank=True)
+    year = models.IntegerField(null=True, blank=True)
     id = models.UUIDField(
         default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 

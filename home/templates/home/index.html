@@ -1,17 +1,14 @@
-{% extends 'base.html' %}
-{% load static %}
-
-
-{% block content %}
+{% extends 'base.html' %} {% load static %} {% block content %}
 <!-- hero and call to action section -->
-<section id="hero-img" class="container-fluid center ">
-         
-    <div class="center">
-        <div class="cta-container">
-                <h1 id="cta" >Online Boutique <br>For Quality Wines</h1>
-                <a id="btn-cta" class="btn btn-danger" href=""> Shop Now!</a>
-        </div>
-    </div>
+<section id="hero-img" class="container-fluid center">
+	<div class="center">
+		<div class="cta-container">
+			<h1 id="cta">Online Boutique <br />For Quality Wines</h1>
+			<a id="btn-cta" class="btn btn-danger" href="{% url 'products' %}">
+				Shop Now!</a
+			>
+		</div>
+	</div>
 </section>
 
 <section></section>
