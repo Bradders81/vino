@@ -4,11 +4,11 @@
 	<div class="row ">
 		{% for wine in wines %}
 		<div class="col-12 col-md-4 container">
-			<div class="card card-size" >
+			<div class="card h-100 ">
 				{% if wine.image %}
-				<img src="{{ wine.image.url }}" class=" products-img" alt=" Bottle of wine" />
+				<img src="{{ wine.image.url }}" class=" card-img-top img fluid" alt=" Bottle of wine" />
 				{% else %}
-				<img src="/static/images/wines/default.png" class=" products-img" alt=" Bottle of wine" />
+				<img src="/static/images/wines/default.png" class="card-img-top img fluid" alt=" Bottle of wine" />
 				{% endif %}
 
 				<div class="card-body">

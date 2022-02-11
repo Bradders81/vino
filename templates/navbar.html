@@ -16,12 +16,13 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
-			<form class="mx-auto d-flex">
+			<form class="mx-auto d-flex" action=" {% url 'products' %}" method="get" >
 				<input
 					class="form-control me-2"
 					type="search"
-					placeholder="Search"
+					placeholder="Search for wines...."
 					aria-label="Search"
+					name="search_query"
 				/>
 				<button class="btn btn-danger" type="submit">Search</button>
 			</form>

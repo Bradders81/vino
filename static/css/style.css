@@ -11,9 +11,13 @@ font-family: 'Roboto', sans-serif; (main family used)
     margin: 0;
     padding: 0;
     border: 0;
-    color: #000;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+}
+
+#messages {
+    justify-content: center;
+    text-align: center;
 }
 
 /* Vino logo in navbar */
@@ -83,12 +87,8 @@ nav .navbar-nav li a {
 /*----- Products Page -----*/
 
 
-
-
 /*------- Product info -------*/
-/* .wine-details {
 
-} */
 
 .img-size {
     height: 100%;
