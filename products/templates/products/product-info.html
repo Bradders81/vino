@@ -6,7 +6,7 @@
     <div class="row wine-details">
         <div class="col-12 col-md-6 center">
             
-            <h1 >{{ bottle.name }} {{ bottle.year }}</h1>
+            <h1 >{{ bottle.wine_name }} {{ bottle.year }}</h1>
             <p>
                 Description: <br> {{ bottle.description }}Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
                 Explicabo consequatur quisquam dolores in, quaerat dolor tempora minima omnis voluptas repudiandae 
@@ -16,7 +16,7 @@
             <p>Country: {{ bottle.country }}</p>
             </p>
             <hr>
-            <p>Type: {{ bottle.type }}</p>
+            <p>Type: {{ bottle.wine_type }}</p>
             <p>Rating: {{ bottle.rating }} / 5</p>
             <p>Price $ {{ bottle.price }}</p>
             <a href="{% url 'products' %}" class="btn btn-danger">Back</a>
