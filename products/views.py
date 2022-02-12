@@ -17,8 +17,8 @@ def products(request):
     if request.GET.get('search_query'):
         search_query = request.GET.get('search_query')
         wines = Wine.objects.filter(
-            Q(name__icontains=search_query) |
-            Q(type__icontains=search_query) |
+            Q(wine_name__icontains=search_query) |
+            Q(wine_type__icontains=search_query) |
             Q(country__icontains=search_query) |
             Q(year__icontains=search_query))
 
