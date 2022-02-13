@@ -1,28 +1,60 @@
-{% extends 'base.html' %}
-
+{% extends 'base.html' %} 
 {% block content %}
 
 <div class="container-fluid">
-  <div class="row">
-    <div class="col">
-      <h1 class="center">Username's Profile</h1>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12 col-md-6"></div>
-    <h5>name</h5>
-    <h5>address</h5>
-    <h5>postcode</h5>
-    
+	<div class="row">
+		<div class="col">
+			<h1 class="center">{{user_profile.user}}'s Profile</h1>
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-12 col-md-6 center">
+			<h4><strong> Personal Info</strong></h4>
+			<hr/>
+      <!-- Credit: Bootstrap Form and customised for this project-->
+      <form class="row g-3" action="{% url 'profile' %}" method="POST">
+        {% csrf_token %}
+        <div class=" col-md-6  center">
+          <label for="name" class="form-label">Name</label>
+          <input type="text" class="form-control center" id="name">
+        </div>
+        <div class=" col-md-6  center">
+          <label for="email" class="form-label">Email Address</label>
+          <input type="text" class="form-control center" id="email">
+        </div>
+        <div class="col-md-6">
+          <label for="address1" class="form-label">First Line of Address</label>
+          <input type="text" class="form-control center" id="address1">
+        </div>
+        <div class="col-md-6">
+          <label for="address2" class="form-label">Second Line of Address</label>
+          <input type="text" class="form-control center" id="address2" >
+        </div>
+        <div class="col-md-6">
+          <label for="townCity" class="form-label">Town or City</label>
+          <input type="text" class="form-control center" id="townCity">
+        </div>
+        <div class="col-md-6">
+          <label for="postCode" class="form-label">Post Code</label>
+          <input type="text" class="form-control center" id="postCode">
+        </div>
 
-  </div>
- 
+        <div class="col-12">
+          <button type="submit" class="btn btn-danger">Edit</button>
+        </div>
+      </form>
+      <div class="row">
+        <div class="col-6">
+          <h5>Name:</h5>
+        </div>
+      </div>
 
-
-
+			<h5></h5>
+			<h5>{{user_profile.street}}</h5>
+			<h5>{{user_profile.city_town}}</h5>
+			<h5>{{user_profile.postcode}}</h5>
+		</div>
+	</div>
 </div>
 
-
-
 {% endblock %}
-

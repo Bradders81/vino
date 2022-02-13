@@ -43,6 +43,12 @@ font-family: 'Roboto', sans-serif; (main family used)
 
 }
 
+
+.nav-hover li a i:hover {
+    color: #000;
+
+}
+
 #hero-img {
     background: url("../images/hero-image.png") center center;
     background-size: cover;
@@ -160,6 +166,9 @@ box-shadow: #d8d2d2 4px 4px 4px 4px;
 
 }
 
+label {
+    font-weight: 600;
+}
 
 /*------- Media Queries -----*/
 
