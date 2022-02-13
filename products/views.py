@@ -11,21 +11,27 @@ def products(request):
     Returns the Prodcuts page and handles
     search queries for products
     """
-    
     wines = Wine.objects.all()
 
-    if request.GET.get('search_query'):
-        search_query = request.GET.get('search_query')
-        wines = Wine.objects.filter(
-            Q(wine_name__icontains=search_query) |
-            Q(wine_type__icontains=search_query) |
-            Q(country__icontains=search_query) |
-            Q(year__icontains=search_query))
+    category = None
 
-        if not wines:
-            messages.error(request, "Nothing matches your search")
+    if request.GET.get('category'):
+        category = request.GET.get('category')
+        category = category
+        wines = wines.filter(wine_type=category)
+    
+        if request.GET.get('search_query'):
+            search_query = request.GET.get('search_query')
+            wines = Wine.objects.filter(
+                Q(wine_name__icontains=search_query) |
+                Q(wine_type__icontains=search_query) |
+                Q(country__icontains=search_query) |
+                Q(year__icontains=search_query))
 
-    context = {'wines': wines, }
+            if not wines:
+                messages.error(request, "Nothing matches your search")
+
+    context = {'wines': wines}
     return render(request, 'products/products.html', context)
 
 
