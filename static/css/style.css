@@ -34,6 +34,15 @@ font-family: 'Roboto', sans-serif; (main family used)
     font-weight: 600;
 }
 
+.nav-item a i {
+    color: #8a0c0c;
+}
+
+.icon:hover {
+    color: #000;
+
+}
+
 #hero-img {
     background: url("../images/hero-image.png") center center;
     background-size: cover;
@@ -122,10 +131,6 @@ box-shadow: #d8d2d2 4px 4px 4px 4px;
 
 }
 
-
-
-
-
 /*------- Product info -------*/
 
 
@@ -137,6 +142,24 @@ box-shadow: #d8d2d2 4px 4px 4px 4px;
 #hr-length {
     width: 50%;
 }
+
+/*----- Form Templates -----*/
+.form-container {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+.form-container {
+    margin-top: 10vh;
+    max-width: 500px;
+    height: auto;
+    padding: 40px;
+    background: rgba(134, 119, 119, 0.5);
+    border-radius: 10px;
+
+
+}
+
 
 /*------- Media Queries -----*/
 

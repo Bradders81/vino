@@ -12,3 +12,4 @@ def profile(request, pk):
 
     context = { }
     return render(request, 'profiles/profile.html', context)
+
