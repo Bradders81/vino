@@ -1,41 +1,76 @@
-{% extends 'base.html' %} 
+{% extends 'base.html' %} {% block content %}
 
-{% block content %}
+<div class="container">
+	<div class="row">
+		<div class="col-12 col-md-4 offset-md-4 center">
+			<div class="dropdown mt-2">
+				<a
+					class="btn-sm btn-secondary dropdown-toggle sort-btn"
+					href="#"
+					role="button"
+					id="dropdownMenuLink"
+					data-bs-toggle="dropdown"
+					aria-expanded="false"
+				>
+					Sort
+				</a>
 
-<div class=" container-fluid">
-<div class="row">
-				{% for wine in wines %}
-			<div class="col-12 col-md-4 col-lg-3 center">
-		
+				<ul
+					class="dropdown-menu text-justify"
+					aria-labelledby="dropdownMenuLink"
+				>
+					<li>
+						<a class="dropdown-item" href="#"><small>Price</small></a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="#"><small>Year</small></a>
+					</li>
+					<li>
+						<a class="dropdown-item" href="#"><small>Country</small></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+</div>
+
+<div class="container-fluid ">
+	<div class="row center">
+		{% for wine in wines %}
+		<div id="card-container" class="col-12 col-md-4 col-lg-3">
 			<div class="card h-100 m-4">
 				{% if wine.image %}
-				<img src="{{ wine.image.url }}" class="card-image card-img-top" alt=" Bottle of wine" />
-				{% else %}
-				<img src="../../../media/images/default.png" class="card-image" alt=" Bottle of wine" />
-				{% endif %}
-				<!-- "card-img-top img fluid -->
-				<div class="card-body-size center">
+					<img
+						src="{{ wine.image.url }}"
+						class="card-image card-img-top"
+						alt=" Bottle of wine"
+					/>
+					{% else %}
+					<img
+						src="../../../media/images/default.png"
+						class="card-image card-img-top"
+						alt=" Bottle of wine"
+					/>
+					{% endif %}
+				
+				<div class="card-body-size ">
 					<h6><strong>{{ wine.wine_name }}</strong></h6>
 					<p>Price $ {{wine.price }}</p>
-					<p>Type: {{ wine.wine_type }}</p>
+					<p>Type: {{ wine.wine_type }} - Year {{wine.year}}</p>
 					<p>Rating: {{wine.rating }}</p>
-					<div  class="card-btn">
-						<a href="{% url 'product-info' wine.id %}" class="btn btn-danger center ">Info</a>
-						<a href="" class="btn btn-warning center">Add to Cart</a>
+					<div class="card-btn">
+						<a
+							href="{% url 'product-info' wine.id %}"
+							class="btn btn-danger "
+							>Info</a
+						>
+						<a href="" class="btn btn-warning">Add to Cart</a>
 					</div>
-			
-			
 				</div>
 			</div>
-			
-		
-	</div>
+		</div>
 		{% endfor %}
-	
+	</div>
+
+	{% endblock %}
 </div>
-	
-</section
-
-{% endblock %}
-
-

@@ -13,13 +13,10 @@ def products(request):
     """
     wines = Wine.objects.all()
 
-    category = None
-
     if request.GET.get('category'):
         category = request.GET.get('category')
-        category = category
         wines = wines.filter(wine_type=category)
-    
+        
         if request.GET.get('search_query'):
             search_query = request.GET.get('search_query')
             wines = Wine.objects.filter(
@@ -32,6 +29,30 @@ def products(request):
                 messages.error(request, "Nothing matches your search")
 
     context = {'wines': wines}
+    return render(request, 'products/products.html', context)
+
+
+def sorting_products(request):
+    """
+    Allows users to sort prodcuts by diffrent catagories
+    assending and desending on the products page.
+    """
+    sort = None
+    wines = wine.objects.get.all()
+
+    if 'sort' in request.GET:
+        sortkey = request.GET['sort']
+        sort = sortkey
+        if sortkey == 'name':
+            sortkey = 'lower_name'
+            products = wines.annotate(lower_name=Lower('name'))
+        if 'direction' in request.GET:
+            if direction =='desc':
+                sortkey = f'-{sortkey}'
+
+    current_sorting = f'{sort}_{direction}'
+
+    context = {'current_sorting': current_sorting}
     return render(request, 'products/products.html', context)
 
 

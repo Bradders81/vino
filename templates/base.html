@@ -14,15 +14,18 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"
 		/>
+		<link rel="stylesheet" />
+
 		<link
-			rel="stylesheet">
-
-			<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" 
-			integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ==" 
-			crossorigin="anonymous" referrerpolicy="no-referrer" />
+			rel="stylesheet"
+			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+			integrity="sha512-1ycn6IcaQQ40/MKBW2W4Rhis/DbILU74C1vSrLJxCq57o941Ym01SwNsOMqvEBFlcgUa6xLiPY/NS5R+E6ztJQ=="
+			crossorigin="anonymous"
+			referrerpolicy="no-referrer"
+		/>
 		<link rel="stylesheet" href="{% static './css/style.css' %}" />
-		{% endblock %}
-
+		{% endblock %} 
+		
 		{% block corejs %}
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/js/bootstrap.min.js"></script>
@@ -35,24 +38,16 @@
 	</head>
 	<body>
 		{% include 'navbar.html' %}
-
-
-
-		<div>
-			<h2 class="free-delivery-msg center">
+		<div id="delivery-msg-wrapper">
+			<h5 id="free-delivery-msg" class="center">
 				Free Delivery with every order over £50!
-			</h2>
+			</h5>
 		</div>
-		{% if messages %}
-			{% for message in messages %}
-			<div>
-				<h4 id="messages">{{ message }}</h4>
-			</div>
-				{% endfor %}
-		{% endif %}
+		{% if messages %} {% for message in messages %}
+		<div>
+			<h6 id="message">{{ message }}</h6>
+		</div>
 
-		{% block content %}
-		
-		{% endblock %}
+		{% endfor %} {% endif %} {% block content %} {% endblock %}
 	</body>
 </html>
