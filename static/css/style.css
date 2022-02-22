@@ -50,14 +50,14 @@ font-family: 'Roboto', sans-serif; (main family used)
 }
 
 #hero-img {
-    background: url("../images/hero-image.png") center center;
+    background: url("../images/hero-image.jpg") center center no-repeat;
     background-size: cover;
     width: auto;
     height: 80vh;
 }
 
 .cta-container {
-    margin-top: 10%;
+    margin: 75px 0 0 25%;
     display: inline-block;
     justify-content: center;
     text-align: center;
@@ -102,11 +102,13 @@ nav .navbar-nav li a {
 /*----- Products Page -----*/
 
 
+
 #card-container {
      margin: 10px;
      height: 578px;
      width: 390px;
      display: inline-block;
+     background: #fff
   
 }
 .card {
@@ -187,6 +189,25 @@ label {
         font-size: 18px;
         background-color: #8a0c0c;
     }
+}
+
+
+@media screen and (max-width: 640px) {
+.cta-container{
+   
+    margin: 50px 0 0 0;
+    display: inline-block;
+    justify-content: center;
+    text-align: center;
+    padding: 2em;
+    border-radius: 1em;
+    background: #b1aaaa7c;
+}
+
+.for-media-query-670 {
+    text-align: center;
+    justify-content: center;
+}
 }
 
 @media screen and (max-width: 325px) {

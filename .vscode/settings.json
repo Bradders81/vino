@@ -24,5 +24,8 @@
    "workbench.colorTheme": "Default Dark+",
    "terminal.integrated.gpuAcceleration": "canvas",
    "editor.defaultFormatter": "HookyQR.beautify",
-   "prettier.useTabs": true
+   "prettier.useTabs": true,
+   "[python]": {
+      "editor.defaultFormatter": "ms-python.python"
+   }
 }
