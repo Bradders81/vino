@@ -11,7 +11,8 @@ class Profile(models.Model):
     username = models.CharField(max_length=30, blank=True, null=True)
     name = models.CharField(max_length=100, blank=True, null=True)
     email = models.EmailField(max_length=200, blank=True, null=True)
-    street = models.CharField(max_length=100, blank=True, null=True)
+    address_line_1 = models.CharField(max_length=100, blank=True, null=True)
+    address_line_2 = models.CharField(max_length=100, blank=True, null=True)
     city_town = models.CharField(max_length=50, blank=True, null=True)
     postcode = models.CharField(max_length=50, blank=True, null=True)
     # review = models.ForeignKey(

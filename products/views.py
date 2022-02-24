@@ -13,46 +13,24 @@ def products(request):
     """
     wines = Wine.objects.all()
 
-    if request.GET.get('category'):
-        category = request.GET.get('category')
-        wines = wines.filter(wine_type=category)
+    # Handles search queries
+    if request.GET.get('search_query'):
+        search_query = request.GET.get('search_query')
+        wines = Wine.objects.filter(
+            Q(wine_name__icontains=search_query) |
+            Q(wine_type__icontains=search_query) |
+            Q(country__icontains=search_query) |
+            Q(year__icontains=search_query))
         
-        if request.GET.get('search_query'):
-            search_query = request.GET.get('search_query')
-            wines = Wine.objects.filter(
-                Q(wine_name__icontains=search_query) |
-                Q(wine_type__icontains=search_query) |
-                Q(country__icontains=search_query) |
-                Q(year__icontains=search_query))
+        if not wines:
+            messages.error(request, "Nothing matches your search")
 
-            if not wines:
-                messages.error(request, "Nothing matches your search")
+    # Handles filter btn's (All Wines, Reds, Whites, Rose)
+    if request.GET.get('wine_type'):
+        wine_type = request.GET.get('wine_type')
+        wines = wines.filter(wine_type=wine_type)
 
     context = {'wines': wines}
-    return render(request, 'products/products.html', context)
-
-
-def sorting_products(request):
-    """
-    Allows users to sort prodcuts by diffrent catagories
-    assending and desending on the products page.
-    """
-    sort = None
-    wines = wine.objects.get.all()
-
-    if 'sort' in request.GET:
-        sortkey = request.GET['sort']
-        sort = sortkey
-        if sortkey == 'name':
-            sortkey = 'lower_name'
-            products = wines.annotate(lower_name=Lower('name'))
-        if 'direction' in request.GET:
-            if direction =='desc':
-                sortkey = f'-{sortkey}'
-
-    current_sorting = f'{sort}_{direction}'
-
-    context = {'current_sorting': current_sorting}
     return render(request, 'products/products.html', context)
 
 
@@ -66,4 +44,3 @@ def product_info(request, pk):
     context = {'wines': wines, 'bottle': bottle, }
 
     return render(request, 'products/product-info.html', context)
-
