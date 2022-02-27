@@ -4,5 +4,6 @@ from . import views
 
 
 urlpatterns = [
-    path('basket/', views.basket, name='basket')
+    path('basket/', views.view_basket, name='basket'),
+    path('add_to_basket/<str:pk>', views.add_to_basket, name='add_to_basket'),
 ]
