@@ -1,12 +1,13 @@
 {% extends 'base.html' %} {% block content %}
 <h1 class="center mt-5">Your Basket</h1>
 <h4 class="center"><strong>Total: ${{ total }}</strong> </h4>
-<hr />
+
 
 <div class="container-fluid center">
 	<div class="row">
 		<div class="col-sm-12 col-md-6 offset-md-3">
-			<!-- Credt/Table taken from Bootstrap and amended for this project -->
+			<hr/>
+			<!-- Credit/Table taken from Bootstrap and amended for this project -->
 			<table class="table table-striped">
 				<thead>
 					<tr>
@@ -23,7 +24,9 @@
 						<td></td>
 						<td>{{ item.wine.wine_name }}</td>
 						<td>{{ item.wine.wine_type }}</td>
-						<td>{{ item.quantity }}</td>
+						<td><form method="post" action="">
+							<input class="w-0 center" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="50" data-item="{{item.item_id}}" id="id_qty_{{item.item_id}}">
+						</form></td>
 						<td>${{ item.wine.price }}</td>
 					</tr>
 
