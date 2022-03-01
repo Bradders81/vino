@@ -1,5 +1,20 @@
-{% extends 'base.html' %}
-
-{% block content %}
+{% extends 'base.html' %} {% block content %}
 <h1 class="center mt-5">Your Basket</h1>
+<hr>
+
+<div class="container-fluid center">
+	<div class="row">
+		<div class="col">
+			{% for item in basket_items %}
+			<tr>
+				<td>{{ item.wine.wine_name }},</td>
+				<td>{{ item.quantity }}</td>
+                <td>${{ item.wine.price }}</td>
+                <hr>
+			</tr>
+			{% endfor %}
+		</div>
+	</div>
+</div>
+
 {% endblock %}
