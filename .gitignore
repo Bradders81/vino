@@ -9,5 +9,5 @@ node_modules/
 cloudinary_python.txt
 *.sqlite3
 *.pyc
-media/images/images
 zzztest.txt
+media/images/images

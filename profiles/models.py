@@ -15,8 +15,6 @@ class Profile(models.Model):
     address_line_2 = models.CharField(max_length=100, blank=True, null=True)
     city_town = models.CharField(max_length=50, blank=True, null=True)
     postcode = models.CharField(max_length=50, blank=True, null=True)
-    # review = models.ForeignKey(
-    #     Reviews, on_delete=models.SET_NULL, null=True, blank=True)
     id = models.UUIDField(
         default=uuid.uuid4, unique=True, primary_key=True, editable=False)
 
