@@ -1,18 +1,37 @@
 {% extends 'base.html' %} {% block content %}
 <h1 class="center mt-5">Your Basket</h1>
-<hr>
+<h4 class="center"><strong>Total: ${{ total }}</strong> </h4>
+<hr />
 
 <div class="container-fluid center">
 	<div class="row">
-		<div class="col">
-			{% for item in basket_items %}
-			<tr>
-				<td>{{ item.wine.wine_name }},</td>
-				<td>{{ item.quantity }}</td>
-                <td>${{ item.wine.price }}</td>
-                <hr>
-			</tr>
-			{% endfor %}
+		<div class="col-sm-12 col-md-6 offset-md-3">
+			<!-- Credt/Table taken from Bootstrap and amended for this project -->
+			<table class="table table-striped">
+				<thead>
+					<tr>
+						<th scope="col"></th>
+						<th scope="col">Wine</th>
+						<th scope="col">Type</th>
+						<th scope="col">Quantity</th>
+						<th scope="col">Price</th>
+					</tr>
+				</thead>
+				<tbody>
+					{% for item in basket_items %}
+					<tr>
+						<td></td>
+						<td>{{ item.wine.wine_name }}</td>
+						<td>{{ item.wine.wine_type }}</td>
+						<td>{{ item.quantity }}</td>
+						<td>${{ item.wine.price }}</td>
+					</tr>
+
+					{% endfor %} {% for item in basket_items %}
+					
+					{% endfor %}
+				</tbody>
+			</table>
 		</div>
 	</div>
 </div>

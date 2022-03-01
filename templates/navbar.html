@@ -73,19 +73,20 @@
 					<a class="nav-link" aria-current="page" href="{% url 'profile' %}"
 						><i class="fas fa-2x fa-user"></i></a>
 				</li>
-
-				<li class="nav-item">
-					<a class="nav-link" aria-current="page" href="{% url 'basket' %}"
-						><i class="fas fa-2x fa-shopping-basket"></i></a
-					>
-				</li>
-
 				<li class="nav-item">
 					<a class="nav-link"
 						aria-current="page"
 						href="{% url 'account_logout' %}"
 						><i class="fas fa-2x fa-sign-out-alt"></i></a>
 				</li>
+
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="{% url 'basket' %}"
+						><i class="fas fa-2x fa-shopping-basket"></i> ${{ total }}</a
+					>
+									</li>
+
+
 
 				{% else %}
 				<li class="nav-item">
@@ -94,10 +95,12 @@
 				href="{% url 'account_login' %}"
 				>Sign In</a>
 				</li>
+				<li class="nav-item">
+					<a class="nav-link" aria-current="page" href="{% url 'basket' %}"
+						><i class="fas fa-2x fa-shopping-basket"></i> ${{ total }}</a
+					>
+					
 				</li>
-					<li class="nav-item">
-				<a class="nav-link" aria-current="page" href="#"
-				></a>
 				{% endif %}
 			</ul>
 		</div>
