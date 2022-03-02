@@ -20,7 +20,10 @@ font-family: 'Roboto', sans-serif; (main family used)
     text-align: center;
 }
 
-/* Vino logo in navbar */
+/* ----- Checkout Form -----*/
+
+
+/* ----- Vino logo in navbar -----*/
 #logo {
     font-family: 'Festive', cursive;
     color: #8a0c0c;
@@ -100,8 +103,6 @@ nav .navbar-nav li a {
     
 }
 /*----- Products Page -----*/
-
-
 
 #card-container {
      margin: 10px;

@@ -5,21 +5,26 @@
 
 <div class="container-fluid center">
     <div class="row">
-        <div class="col-sm-12 col-md-6 offset-md-3">
+        <div class="col-sm-12 col-md-4 offset-md-4 ">
             <hr>
             <form action="{% url 'checkout' %}" method="POST" id="payment-form">
                 {% csrf_token %}
                 <fieldset>
-                    <legend class="fieldsdet-label">Contact</legend>
+                    <legend>Contact</legend>
                     {{ order_form.name | as_crispy_field }}
+                    <br>
                     {{ order_form.email | as_crispy_field }}
+                    <br>
                     {{ order_form.phone_number | as_crispy_field }}
                 </fieldset>
                 <fieldset>
-                    <legend class="fieldsdet-label">Delivery</legend>
+                    <legend>Delivery</legend>
                     {{ order_form.address_line1 | as_crispy_field }}
+                    <br>
                     {{ order_form.address_line2 | as_crispy_field }}
+                    <br>
                     {{ order_form.city_town | as_crispy_field }}
+                    <br>
                     {{ order_form.postcode | as_crispy_field }}
                 </fieldset>
 
@@ -30,10 +35,6 @@
                             <a class="link-normal" href="{% url 'account_signup' %}">Create an account</a> or 
                             <a class="link-normal" href="{% url 'account_login' %}">login</a> to save this information
                         </label>
-               
-                 </div>
-                
-                <legend class="fieldset-label small text-black px-2 w-auto">Payment</legend>
          
                 <div class="mb-3" id="card-element"></div>
 
@@ -43,7 +44,8 @@
 
                         <span class="font-weight-bold">Adjust Bag</span>
                     </a>
-                    <button id="submit-button" class="btn btn-black rounded-0">
+                </div>
+                    <button id="submit-button" class="btn btn-warning">
                         <span class="font-weight-bold">Complete Order</span>
                         <span class="icon">
                             <i class="fas fa-lock"></i>
@@ -55,7 +57,7 @@
                         </span>
                         <span>Your card will be charged <strong>${{ total|floatformat:2 }}</strong></span>
                     </p>
-                </div>
+                
             </form>
         </div>
     </div>
