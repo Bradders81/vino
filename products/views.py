@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 from django.contrib import messages
 from .models import Wine
@@ -30,6 +30,9 @@ def products(request):
         wine_type = request.GET.get('wine_type')
         wines = wines.filter(wine_type=wine_type)
 
+        if not wines:
+            messages.error(request, "Nothing matches your search")
+
     context = {'wines': wines}
     return render(request, 'products/products.html', context)
 
@@ -39,7 +42,7 @@ def product_info(request, pk):
     Returns the product selected by the user to the product info page
     """
     wines = Wine.objects.all()
-    bottle = Wine.objects.get(id=pk)
+    bottle = get_object_or_404(Wine, id=pk)
 
     context = {'wines': wines, 'bottle': bottle, }
 
