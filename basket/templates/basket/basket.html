@@ -1,6 +1,7 @@
 {% extends 'base.html' %} {% block content %}
 <h1 class="center mt-5">Your Basket</h1>
 <h4 class="center"><strong>Total: ${{ total }}</strong> </h4>
+<a href="{% url 'checkout' %}" class="btn btn-success">Secure Checkout</a>
 
 
 <div class="container-fluid center">

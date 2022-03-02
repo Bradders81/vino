@@ -3,11 +3,13 @@ from .models import Order
 
 
 class OrderForm(forms.ModelForm):
+    """
+    Doc string
+    """
     class Meta:
         model = Order
-        fields = ('name', 'email', 'address_line1',
+        fields = ('name', 'email','phone_number', 'address_line1',
                   'address_line2', 'city_town', 'postcode',)
-
 
     def __init__(self, *args, **kwargs):
         """
@@ -22,7 +24,7 @@ class OrderForm(forms.ModelForm):
             'address_line1': 'Street Address 1',
             'address_line2': 'Street Address 2',
             'postcode': 'Postal Code',
-            'town_city': 'Town or City',
+            'city_town': 'Town or City',
         }
 
         self.fields['name'].widget.attrs['autofocus'] = True
