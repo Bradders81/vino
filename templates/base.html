@@ -25,6 +25,10 @@
 		/>
 		<link rel="stylesheet" href="{% static './css/style.css' %}" />
 		{% endblock %} 
+
+		{% block extra_css %}
+		{% endblock %}
+
 		
 		{% block corejs %}
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
@@ -34,7 +38,8 @@
 			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 			crossorigin="anonymous"
 		></script>
-		<script src="{% static './static/js/script.js' %}"></script>
+		<script src="https://js.stripe.com/v3/"></script>
+		
 		{% endblock %}
 	</head>
 	<body>
@@ -49,6 +54,11 @@
 			<h6 id="message">{{ message }}</h6>
 		</div>
 
-		{% endfor %} {% endif %} {% block content %} {% endblock %}
+		{% endfor %} 
+		{% endif %} 
+		{% block content %} 
+		{% endblock %}
+		{% block postloadjs %}
+		{% endblock %}
 	</body>
 </html>
