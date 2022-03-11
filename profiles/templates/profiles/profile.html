@@ -1,4 +1,6 @@
-{% extends 'base.html' %} {% block content %}
+{% extends 'base.html' %} 
+
+{% block content %}
 
 <div class="container-fluid">
 	<div class="row">
@@ -11,63 +13,12 @@
 			<h4><strong> Personal Info</strong></h4>
 			<hr />
 			<!-- Credit: Bootstrap Form and customised for this project-->
-			<form class="row g-3" action="{% url 'profile' %}" method="POST" disabled>
+			<form class="row g-3" action="{% url 'profile' %}" method="POST" id="profile-form">
 				{% csrf_token %}
-				<div class="col-md-6 center">
-					<label for="name" class="form-label">Name</label>
-					<input
-						type="text"
-						value="{{user_profile.name}}"
-						class="form-control center"
-						id="name"
-					/>
-				</div>
-				<div class="col-md-6 center">
-					<label for="email" class="form-label">Email Address</label>
-					<input
-						type="text"
-						value="{{user_profile.email}}"
-						class="form-control center"
-						id="email"
-					/>
-				</div>
-				<div class="col-md-6">
-					<label for="address1" class="form-label">First Line of Address</label>
-					<input
-						type="text"
-						value="{{user_profile.address_line_1}}"
-						class="form-control center"
-						id="address1"
-					/>
-				</div>
-				<div class="col-md-6">
-					<label for="address2" class="form-label"
-						>Second Line of Address</label
-					>
-					<input
-						type="text"
-						value="{{user_profile.address_line_2}}"
-						class="form-control center"
-						id="address2"
-					/>
-				</div>
-				<div class="col-md-6">
-					<label for="townCity" class="form-label">Town or City</label>
-					<input
-						type="text"
-						value="{{user_profile.city_town}}"
-						class="form-control center"
-						id="townCity"
-					/>
-				</div>
-				<div class="col-md-6">
-					<label for="postCode" class="form-label">Postcode</label>
-					<input
-						type="text"
-						value="{{user_profile.postcode}}"
-						class="form-control center"
-						id="postCode"
-					/>
+				{{ user_profile }}
+			</form>
+				<div class="col-12">
+					<button type="submit" class="btn btn-danger">Edit</button>
 				</div>
 
 				<div class="col-12">
@@ -78,6 +29,7 @@
 		
 			<div class="col-12 col-md-6 center">
         <h4><strong> Order History</strong></h4>
+		{{ orders }}
 			</div>
 		
 	</div>

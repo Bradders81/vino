@@ -37,7 +37,7 @@ class Order(models.Model):
         """
 
         self.order_total = self.lineitems.aggregate(
-            Sum('lineitem_total'))['lineitem_total__sum']
+            Sum('lineitem_total'))['lineitem_total__sum'] or 0
         self.save()
 
     def save(self, *args, **kwargs):
@@ -62,9 +62,10 @@ class OrderLineItem(models.Model):
         related_name='lineitems')
     product = models.ForeignKey(
         Wine, null=False, blank=False, on_delete=models.CASCADE)
-    quantity = models.ImageField(null=False, blank=False, default=0)
+    quantity = models.IntegerField(null=False, blank=False, default=0)
     lineitem_total = models.DecimalField(
-        max_digits=6, decimal_places=2, null=False, blank=False, editable=False)
+        max_digits=6, decimal_places=2, null=False,
+        blank=False, editable=False)
     
     def save(self, *args, **kwargs):
         """
@@ -75,4 +76,4 @@ class OrderLineItem(models.Model):
         super().save(*args, **kwargs)
 
     def __str__(self):
-        return self.order_number
+        return f'Order Number {self.order.order_number}'
