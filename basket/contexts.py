@@ -19,10 +19,7 @@ def basket_contents(request):
             'item_id': item_id,
             'quantity': quantity,
             'wine': wine,
-
-            
         })
-    
 
     context = {
         'basket_items': basket_items,

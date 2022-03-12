@@ -39,17 +39,19 @@ def checkout(request):
                         product=product,
                         quantity=item_data,
                     )
+
                     order_line_item.save()
                 except Wine.DoesNotExist:
                     messages.error(request, (
-                        "It looks like your basket and our database do not match."
+                        "Your basket and our database do not match."
                         "Please contact us for assistance.")
                     )
                     order.delete()
                     return redirect(reverse('view_basket'))
-                    
+        
             request.session['save_info'] = 'save-info' in request.POST
-            return redirect(reverse('checkout_success', args=[order.order_number]))
+            return redirect(
+                reverse('checkout_success', args=[order.order_number]))
         else:
             messages.error(request, 'Order error. Please try again')
     else:
@@ -84,7 +86,7 @@ def checkout_success(request, order_number):
     """
     save_info = request.session.get('save_info')
     order = get_object_or_404(Order, order_number=order_number)
-    messages.success(request, f'Order successfully processed!')
+    
 
     if 'basket' in request.session:
         del request.session['basket']

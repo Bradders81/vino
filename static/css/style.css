@@ -21,7 +21,15 @@ font-family: 'Roboto', sans-serif; (main family used)
 }
 
 /* ----- Checkout Form -----*/
+.quantity {
+    border: #000 2px solid;
+    margin-left: 10px;
+    
+}
 
+.site-red-text{
+    color: #8a0c0c;
+}
 
 /* ----- Vino logo in navbar -----*/
 #logo {

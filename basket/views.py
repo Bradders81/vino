@@ -20,11 +20,10 @@ def add_to_basket(request, pk):
     quantity = int(request.POST.get('quantity'))
     redirect_url = request.POST.get('redirect_url')
     basket = request.session.get('basket', {})
-    
-
 
     if pk in list(basket.keys()):
         basket[pk] += quantity
+       
 
     else:
         basket[pk] = quantity

@@ -1,8 +1,10 @@
 {% extends 'base.html' %} {% block content %}
-<h1 class="center mt-5">Your Basket</h1>
-<h4 class="center"><strong>Total: ${{ total }}</strong> </h4>
-<a href="{% url 'checkout' %}" class="btn btn-success">Secure Checkout</a>
+<div class="center">
+<h1 class="mt-5">Your Basket</h1>
+<h4 ><strong>Total: ${{ total }}</strong> </h4>
 
+
+</div>
 
 <div class="container-fluid center">
 	<div class="row">
@@ -16,7 +18,7 @@
 						<th scope="col">Wine</th>
 						<th scope="col">Type</th>
 						<th scope="col">Quantity</th>
-						<th scope="col">Price</th>
+						<th scope="col">Price Per Bottle</th>
 					</tr>
 				</thead>
 				<tbody>
@@ -26,16 +28,17 @@
 						<td>{{ item.wine.wine_name }}</td>
 						<td>{{ item.wine.wine_type }}</td>
 						<td><form method="post" action="">
-							<input class="w-0 center" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="50" data-item="{{item.item_id}}" id="id_qty_{{item.item_id}}">
+							<input class="w-0 center quantity" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="50" data-item="{{item.item_id}}" id="id_qty_{{item.item_id}}">
 						</form></td>
 						<td>${{ item.wine.price }}</td>
 					</tr>
 
-					{% endfor %} {% for item in basket_items %}
-					
-					{% endfor %}
+					{% endfor %} 
 				</tbody>
 			</table>
+			<div class="center">
+				<a href="{% url 'checkout' %}" class="btn btn-warning">Secure Checkout</a>
+			</div>
 		</div>
 	</div>
 </div>
