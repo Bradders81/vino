@@ -5,7 +5,7 @@
 <div class="container-fluid">
 	<div class="row">
 		<div class="col">
-			<h1 class="center">{{ user_profile }}'s Profile</h1>
+			<h1 class="center">{{ profile }}'s Profile</h1>
 		</div>
 	</div>
 	<div class="row">
@@ -15,20 +15,18 @@
 			<!-- Credit: Bootstrap Form and customised for this project-->
 			<form class="row g-3" action="{% url 'profile' %}" method="POST" id="profile-form">
 				{% csrf_token %}
-				
+				{{ form|crispy }}
+				<button type="submit" class="btn btn-danger">Edit Information</button>
 			</form>
-				<div class="col-12">
-					<button type="submit" class="btn btn-danger">Edit</button>
-				</div>
 
-				<div class="col-12">
-					<button type="submit" class="btn btn-danger">Edit</button>
-				</div>
+
+
 			</form>
 		</div>
 		
 			<div class="col-12 col-md-6 center">
         <h4><strong> Order History</strong></h4>
+		<hr>
 		{{ orders }}
 			</div>
 		
