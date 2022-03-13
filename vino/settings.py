@@ -47,10 +47,11 @@ INSTALLED_APPS = [
     'crispy_forms',
     'home',
     'products',
-    'profiles',
     'basket',
     'storages',
     'checkout',
+    'profiles1',
+    'profiles',
 ]
 
 MIDDLEWARE = [
