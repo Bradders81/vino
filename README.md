@@ -1,108 +1,175 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Vino
 
-Welcome Bradders81,
+  
+The live site is [here](https://bradders81-vino.herokuapp.com/).
 
-This is the Code Institute student template for Gitpod. We have preinstalled all of the tools you need to get started. It's perfectly ok to use this template as the basis for your project submissions.
+A website for wine lovers
 
-You can safely delete this README.md file, or change it for your own project. Please do read it at least once, though! It contains some important information about Gitpod and the extensions we use. Some of this information has been updated since the video content was created. The last update to this file was: **September 1, 2021**
+See current position of the side below
+____
 
-## Gitpod Reminders
+## Description
 
-To run a frontend (HTML, CSS, Javascript only) application in Gitpod, in the terminal, type:
+This site is created for people who like to cook and discover new wines.  Users can visit the site to buy wines for online delivery.  Returning users can create an account to keep a history of the orders, delivery details and also leave revies for other uses.
 
-`python3 -m http.server`
+## Purpose
 
-A blue button should appear to click: _Make Public_,
+Along with being convenient place to buy wine.  User will be able to consider the reviews of other users and leave their own reviews so that might may a more informed decicion before making a purchase.
+____
 
-Another blue button should appear to click: _Open Browser_.
+## User Stories
 
-To run a backend Python file, type `python3 app.py`, if your Python file is named `app.py` of course.
+### User
 
-A blue button should appear to click: _Make Public_,
+*"I want a website that I can navigate easily.”
+“I want to be able to have my own profile.”
+“I want to be able to filter between search results”
+“I want to be able to leave a reveiw and read reviews of other users”
+“I want to be able to delete my review”
+"I want to be able to amend and delete my profile information"
+“I want to be able to use the site on mobile devices”*
 
-Another blue button should appear to click: _Open Browser_.
+____
+# Current Position of the Project
 
-In Gitpod you have superuser security privileges by default. Therefore you do not need to use the `sudo` (superuser do) command in the bash terminal in any of the lessons.
+Due to personal reasons I have not been able to complete the work on this project before the submission deadline.  The development site works better than the deployed site which has a bug with the user profile.  This results in an error for most of the funcunality, given the relationships between the models.  There is currently more funcunality in developement, if the server is run from gitpod.
 
-To log into the Heroku toolbelt CLI:
+Credit:
+I have followed the the Code Institue Butique Ado Project very closley, especially with the checkout and profile app.  My initial profile app seem to encourter some curruption with the database and given the my limited time I had to create another profile app from scratch 'Profiles' is therefore not used and the one used is 'Profiles1'.  At this stage I have not removed the old Profiles app.  I have not yet removed the old Profile App 
 
-1. Log in to your Heroku account and go to *Account Settings* in the menu under your avatar.
-2. Scroll down to the *API Key* and click *Reveal*
-3. Copy the key
-4. In Gitpod, from the terminal, run `heroku_config`
-5. Paste in your API key when asked
 
-You can now use the `heroku` CLI program - try running `heroku apps` to confirm it works. This API key is unique and private to you so do not share it. If you accidentally make it public then you can create a new one with _Regenerate API Key_.
+## UX
 
-------
+### **Strategy**
 
-## Release History
+#### Owner
 
-We continually tweak and adjust this template to help give you the best experience. Here is the version history:
+- provide a site that users learn to navigate intuitively.
+- build up a database of users.
+- generate repeat visitors.
 
-**September 1 2021:** Remove `PGHOSTADDR` environment variable.
 
-**July 19 2021:** Remove `font_fix` script now that the terminal font issue is fixed.
+#### User
 
-**July 2 2021:** Remove extensions that are not available in Open VSX.
+- To be able to create their own account.
+- To find wines that they would like to try and leave a review.
 
-**June 30 2021:** Combined the P4 and P5 templates into one file, added the uptime script. See the FAQ at the end of this file.
+### **Scope**
 
-**June 10 2021:** Added: `font_fix` script and alias to fix the Terminal font issue
+The site will have the following:
 
-**May 10 2021:** Added `heroku_config` script to allow Heroku API key to be stored as an environment variable.
+ - Allow users to create and delete their account.
+ - Functionally for the user to be able to update and also delete their personal information.
+ - A place for users to be able to see and search for all wines available from the site.
+ - A landing page with with a call to action button to enourage users to look through the wines
+ - The front-end will be written in HTML and CSS JavaScript and will use Bootstrap's grid system and for some of the templates (such as for forms and the navbar). 
 
-**April 7 2021:** Upgraded the template for VS Code instead of Theia.
+The back-end will be written in Python, just the Django framwork and Jinja templates.
 
-**October 21 2020:** Versions of the HTMLHint, Prettier, Bootstrap4 CDN and Auto Close extensions updated. The Python extension needs to stay the same version for now.
+ #### Scheme
 
-**October 08 2020:** Additional large Gitpod files (`core.mongo*` and `core.python*`) are now hidden in the Explorer, and have been added to the `.gitignore` by default.
+TBC
 
-**September 22 2020:** Gitpod occasionally creates large `core.Microsoft` files. These are now hidden in the Explorer. A `.gitignore` file has been created to make sure these files will not be committed, along with other common files.
 
-**April 16 2020:** The template now automatically installs MySQL instead of relying on the Gitpod MySQL image. The message about a Python linter not being installed has been dealt with, and the set-up files are now hidden in the Gitpod file explorer.
+### **Structure**
 
-**April 13 2020:** Added the _Prettier_ code beautifier extension instead of the code formatter built-in to Gitpod.
+The site is to be intuitive and simple to use.  
 
-**February 2020:** The initialisation files now _do not_ auto-delete. They will remain in your project. You can safely ignore them. They just make sure that your workspace is configured correctly each time you open it. It will also prevent the Gitpod configuration popup from appearing.
+ - This will be a multi-page site.
+ - Navigation bar at the top right.
+ - Logged user will have access to the full site
+ - Logged out/non-registered user will not have access to the proflie page or be able 
+ - 
+### **Skeleton**
 
-**December 2019:** Added Eventyret's Bootstrap 4 extension. Type `!bscdn` in a HTML file to add the Bootstrap boilerplate. Check out the <a href="https://github.com/Eventyret/vscode-bcdn" target="_blank">README.md file at the official repo</a> for more options.
+ **Navigation**
+The navigation bar will be fixed to the top of the screen.  On the left will be the sites name/logo, which if clicked will link back to the home page.  The navigation links will be on the right and collapse into a burger menu on smaller screens such as mobile phones.  The search bar will be in the navbar to save space.
 
-------
 
-## FAQ about the uptime script
+**Home Page** (visible to all users)
+The user will be greeted by a hero background  image, upon which will be a call to action button and text.  The image will only cover 80% to 90% of the view hight so that top of the section below.
 
-**Why have you added this script?**
 
-It will help us to calculate how many running workspaces there are at any one time, which greatly helps us with cost and capacity planning. It will help us decide on the future direction of our cloud-based IDE strategy.
+**Sign Up**
+Simple sign up form.  The form will capture the user's username, password and email.  
 
-**How will this affect me?**
+Having a registered email address will also help the site owner identify the user in the database, should the user make contact via email.
 
-For everyday usage of Gitpod, it doesn’t have any effect at all. The script only captures the following data:
+When entering a password the user will be asked to re-enter their chosen password to help eliminate typographical errors in the password that could prevent the user from accessing their site.
+ 
+A link will also be provided to direct the user to the login page if they already have an account
 
-- An ID that is randomly generated each time the workspace is started.
-- The current date and time
-- The workspace status of “started” or “running”, which is sent every 5 minutes.
+** Login Page**
+Simple login form.  Only username and password will be required to login.  Link provided to take the user to the Sign Up page if they do not have an account.
 
-It is not possible for us or anyone else to trace the random ID back to an individual, and no personal data is being captured. It will not slow down the workspace or affect your work.
 
-**So….?**
+## Testing
 
-We want to tell you this so that we are being completely transparent about the data we collect and what we do with it.
+Test doc will go here
 
-**Can I opt out?**
+____
 
-Yes, you can. Since no personally identifiable information is being captured, we'd appreciate it if you let the script run; however if you are unhappy with the idea, simply run the following commands from the terminal window after creating the workspace, and this will remove the uptime script:
+## Deployment
 
-```
-pkill uptime.sh
-rm .vscode/uptime.sh
-```
 
-**Anything more?**
+### Heroku
+Heroku is used to host the application.  Heroku will need to know what dependencies/applications are needed to run the app.  These should be stored in the requirement.txt file.  
 
-Yes! We'd strongly encourage you to look at the source code of the `uptime.sh` file so that you know what it's doing. As future software developers, it will be great practice to see how these shell scripts work.
+Using pip3 use the following command: pip3 freeze --local > requirements.txt
+A Procfile  is also needed so Heroku knows how to run the app.  which an be created with the following command: echo web: python *{name of .py file}* > Procfile.
 
----
+Then:
 
-Happy coding!
+1.Go to [Heroku.com](https://www.heroku.com/) and create an account/login.
+1. Click create new app, provide a name for your app and select the region near your location.
+1. Click create app.
+1. There are various methods to deploy the application and you should refer to the Heroku documentation [here](https://devcenter.heroku.com/categories/reference#deployment) if you want further information on all the methods.  I used automatic deployment from GitHub.  To deploy the site in this way click on the deployment tab and then click on the 'GitHub Connect to GitHub' button.  You may then be asked to log in to GitHub at this point.
+1. Search for your repository in the 'Search for a repository to connect to' section.
+1.  click 'Connect' when you have found your repository.
+1. Next click on the 'Settings' tab near the top of the page and go to 'reveal Config Vars'.
+1. You will then need to input the config variables that you will have stored .
+1. Next click the 'Deploy' at top near the top of the page and click 'Enable Automatic Deployment'
+10.Next click 'Deploy Branch', If there is more than one branch make sure you select the branch you want to deploy. 
+1. App will then be built by Heroku and a link to the deployed site will be provided.
+
+
+
+
+### Cloning The Site
+
+1. From within the repository click on 'Code' button with the download icon.
+2. A small menu will appear to give you various options.  One option is to copy the URL provided in this menu.
+3. Within the Integrated Development Environment (IDE) that you are using, change the directory to the ULR you have just copied.
+4. For more options and details as to how to clone the site click [here](https://docs.github.com/en/free-pro-team@latest/github/using-git/which-remote-url-should-i-use) You may need to be logged into GitHub to view this page.
+
+____
+
+## Credits
+
+### Images
+
+Image credits will go here
+
+
+
+## General Credits
+
+**Bootstrap** has been used to create the grid system.  It has also been used to create the navbar, forms and  cards.  However all have been customised by me
+
+**Google Fonts:**  Fonts for this project are from Google Fonts.  The import at the top of the CSS file was copied from Google Fonts.
+
+**Mail Icon:** The icons used in the site are from Font Awesome
+
+**Code Institue** The logic in building this app has come from my learning in the Code Institute Full Stack Developer Course and influenced from the mini work though project: Task List
+
+## Acknowledgements
+
+Thanks go to:
+
+* My mentor, Brian Macharia for his continued  advice and feedback.
+
+* The Code Institute Slack Community who are always on hand to answer queries.
+
+* The Code Institute Tutors for their assistance with any queries.
+
+
