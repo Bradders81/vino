@@ -12,7 +12,7 @@ class UserProfile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     phone_number = models.CharField(max_length=20, null=False, blank=True)
     city_town = models.CharField(max_length=40, null=False, blank=True)
-    address_line1 = models.CharField(max_length=80, null=False, blank=False)
+    address_line1 = models.CharField(max_length=80, null=False, blank=True)
     address_line2 = models.CharField(max_length=80, null=True, blank=True)
     postcode = models.CharField(max_length=20, null=True, blank=True)
 
