@@ -24,7 +24,7 @@ ____
 *"I want a website that I can navigate easily.”
 “I want to be able to have my own profile.”
 “I want to be able to filter between search results”
-“I want to be able to leave a reveiw and read reviews of other users”
+“I want to be able to leave a review and read reviews of other users”
 “I want to be able to delete my review”
 "I want to be able to amend and delete my profile information"
 “I want to be able to use the site on mobile devices”*
@@ -32,10 +32,10 @@ ____
 ____
 # Current Position of the Project
 
-Due to personal reasons I have not been able to complete the work on this project before the submission deadline.  The development site works better than the deployed site which has a bug with the user profile.  This results in an error for most of the funcunality, given the relationships between the models.  There is currently more funcunality in developement, if the server is run from gitpod.
+Due to personal reasons I have not been able to complete the work on this project before the submission deadline.  The development site works better than the deployed site which has a bug with the user profile.  This results in an error for most of the functionality, given the relationships between the models.  There is currently more functionality in development, if the server is run from gitpod.
 
 Credit:
-I have followed the the Code Institue Butique Ado Project very closley, especially with the checkout and profile app.  My initial profile app seem to encourter some curruption with the database and given the my limited time I had to create another profile app from scratch 'Profiles' is therefore not used and the one used is 'Profiles1'.  At this stage I have not removed the old Profiles app.  I have not yet removed the old Profile App 
+I have followed the the Code Institute Boutique Ado Project very closely, especially with the checkout and profile app.  My initial profile app seem to encounter some corruption with the database and given the my limited time I had to create another profile app from scratch 'Profiles' is therefore not used and the one used is 'Profiles1'.  At this stage I have not removed the old Profiles app.  I have not yet removed the old Profile App 
 
 
 ## UX
@@ -61,10 +61,10 @@ The site will have the following:
  - Allow users to create and delete their account.
  - Functionally for the user to be able to update and also delete their personal information.
  - A place for users to be able to see and search for all wines available from the site.
- - A landing page with with a call to action button to enourage users to look through the wines
+ - A landing page with with a call to action button to encourage users to look through the wines
  - The front-end will be written in HTML and CSS JavaScript and will use Bootstrap's grid system and for some of the templates (such as for forms and the navbar). 
 
-The back-end will be written in Python, just the Django framwork and Jinja templates.
+The back-end will be written in Python, just the Django framework and Jinja templates.
 dd
  #### Scheme
 
