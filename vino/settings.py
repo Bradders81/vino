@@ -51,7 +51,6 @@ INSTALLED_APPS = [
     'storages',
     'checkout',
     'profiles1',
-    'profiles',
 ]
 
 MIDDLEWARE = [
