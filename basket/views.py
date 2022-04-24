@@ -30,7 +30,6 @@ def add_to_basket(request, pk):
 
     request.session['basket'] = basket
     
-
     return redirect(redirect_url)
 
 
