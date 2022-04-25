@@ -27,8 +27,12 @@
 						<td></td>
 						<td>{{ item.wine.wine_name }}</td>
 						<td>{{ item.wine.wine_type }}</td>
-						<td><form method="post" action="">
+						<td>
+							<form method="post" action="{% url 'change_quantity' item.item_id %}">
+								{% csrf_token %}
 							<input class="w-0 center quantity" type="number" name="quantity" value="{{ item.quantity }}" min="1" max="50" data-item="{{item.item_id}}" id="id_qty_{{item.item_id}}">
+							<input type="submit" value="Update " class="btn btn-warning"></input>
+							<input type="hidden" name="redirect_url" value="{{ request.path }}">
 						</form></td>
 						<td>${{ item.wine.price }}</td>
 					</tr>
@@ -40,9 +44,7 @@
 				<a href="{% url 'checkout' %}" class="btn btn-warning">Secure Checkout</a>
 				<a href="{% url 'products' %}" class="btn btn-danger">Keep Shopping</a>
 			</div>
-			<div class="center">
-				
-			</div>
+
 		</div>
 	</div>
 </div>
