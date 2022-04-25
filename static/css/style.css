@@ -16,8 +16,13 @@ font-family: 'Roboto', sans-serif; (main family used)
 }
 
 #messages {
-    justify-content: center;
-    text-align: center;
+    color: #fff;
+    
+}
+
+#top-banner {
+    background-color: #8a0c0c;
+    height: 26px;
 }
 
 /* ----- Checkout Form -----*/
@@ -96,12 +101,6 @@ font-family: 'Roboto', sans-serif; (main family used)
     justify-content: center;
 }
 
-
-#free-delivery-msg {
-    background-color: #8a0c0c;
-    color: #fff;
-}
-
 nav .navbar-nav li a {
     color: #8a0c0c !important;
 }
@@ -131,9 +130,6 @@ nav .navbar-nav li a {
 .card:hover {
 box-shadow: #d8d2d2 4px 4px 4px 4px;
 }
-
-
-
 
 .card-image{
    width:100%;
@@ -182,8 +178,6 @@ box-shadow: #d8d2d2 4px 4px 4px 4px;
     padding: 40px;
     background: rgba(134, 119, 119, 0.5);
     border-radius: 10px;
-
-
 }
 
 label {
@@ -191,15 +185,6 @@ label {
 }
 
 /*------- Media Queries -----*/
-
-@media screen and (max-width: 450px) {
-
-    .free-delivery-msg {
-        font-size: 18px;
-        background-color: #8a0c0c;
-    }
-}
-
 
 @media screen and (max-width: 640px) {
 .cta-container{
@@ -217,11 +202,4 @@ label {
     text-align: center;
     justify-content: center;
 }
-}
-
-@media screen and (max-width: 325px) {
-
-    .free-delivery-msg {
-        Font-size: 15px;
-    }
 }

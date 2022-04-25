@@ -61,4 +61,3 @@ def change_quantity(request, pk):
     request.session['quantity'] = new_quantity
 
     return redirect(redirect_url)
-
