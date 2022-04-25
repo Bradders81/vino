@@ -15,14 +15,20 @@ font-family: 'Roboto', sans-serif; (main family used)
     box-sizing: border-box;
 }
 
+#top-banner {
+    background-color: #8a0c0c;
+    height: 26px;
+}
+
 #messages {
     color: #fff;
     
 }
 
-#top-banner {
-    background-color: #8a0c0c;
-    height: 26px;
+#banner-text {
+    color: #fff;
+    margin-right: 20px;
+    float: right;
 }
 
 /* ----- Checkout Form -----*/
