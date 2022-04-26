@@ -14,8 +14,6 @@
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.0/css/bootstrap.min.css"
 		/>
-	
-
 		<link
 			rel="stylesheet"
 			href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -25,10 +23,8 @@
 		/>
 		<link rel="stylesheet" href="{% static './css/style.css' %}" />
 		{% endblock %} 
-
 		{% block extra_css %}
 		{% endblock %}
-
 		
 		{% block corejs %}
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.9.2/umd/popper.min.js"></script>
@@ -54,15 +50,20 @@
 				{% endif %} 
 			</h6>
 		</div>
-
 		{% block content %} 
 		{% endblock %}
 		<footer>
 			<div class="container-fluid">
 				<div id="footer-style"  class="row center no-gutters">
 					<div class="col-4">Contact Info</div>
-					<div class="col-4">Site For Education Purposes</div>
-					<div class="col-4">Social Media</div>
+					<div class="col-4"><p>Site For Education Purposes</p> </div>
+					<div class="col-4" id="social">
+						<ul>
+							<li><a href="https://en-gb.facebook.com/" target="_blank"><i class="fab fa-facebook fa-lg"></i></a></li>
+							<li><a href="https://www.youtube.com/" target="_blank"><i class="fab fa-youtube fa-lg"></i></a></li>
+							<li><a href="https://www.instagram.com/" target="_blank"><i class="fab fa-instagram fa-lg"></i></a></li>
+						</ul>
+					</div>
 				</div>
 			</div>
 		</footer>
