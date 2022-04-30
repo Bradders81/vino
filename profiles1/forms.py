@@ -4,7 +4,8 @@ from .models import UserProfile
 
 class UserProfileForm(forms.ModelForm):
     """
-    Doc string
+    Form created used to create and update userprofile
+    and populate order from
     """
     class Meta:
         model = UserProfile
