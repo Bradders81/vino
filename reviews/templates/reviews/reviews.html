@@ -2,12 +2,26 @@
 
 {% block content %}
 
-<h1> Write your Review</h1>
+<div class="row">
+  <col-12 class="col-md-6 center">
+  <h1> Write Your Review</h1>
+</col-12>
+</div>
 
-<form action="">
-  <div class="mb-3">
-    {% csrf_token %}
-    {{ form|crispy }}
-</form>
+<hr>
+<br>
+<div class="container-fluid">
+  <div class="row">
+    <col-12 class="col-md-6">
+    <form form class="row g-3" action="{% url 'reviews' %}" method="POST" id="review-form"></form>
+      <div class="mb-3">
+        {% csrf_token %}
+        {{ form|crispy }}
+        <a href="" class="btn btn-warning">Submit</a>
+    </form>
+    </col-12>
+  </div>
+</div>
+
 
 {% endblock %}

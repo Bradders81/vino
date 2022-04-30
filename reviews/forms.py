@@ -15,11 +15,12 @@ class UserReviewForm(forms.ModelForm):
         super(UserReviewForm, self).__init__(*args, **kwargs)
 
         placeholders = {
-            'review_name': 'review_name',
+            'review_name': 'Review Title',
             'wine': 'wine',
+            'review': 'Write you review here.....',
             'score': 'score',
-            'review': 'review',
-            'buy_again': 'buy_again',
+            'buy_again': 'Buy Again?'
+            
         }
 
         self.fields['review_name'].widget.attrs['autofocus'] = True
@@ -28,5 +29,5 @@ class UserReviewForm(forms.ModelForm):
                 placeholder = f'{placeholders[field]} *'
             else:
                 placeholder = placeholders[field]
-            self.fields[field].widget.attrs['placeholder'] = placeholder
-            self.fields[field].label = False
+                self.fields[field].widget.attrs['placeholder'] = placeholder
+         
