@@ -1,18 +1,12 @@
 from django.db import models
-from django.core.validators import MaxValueValidator, MinValueValidator
 from profiles1 .models import UserProfile
 from products .models import Wine
-from django.db.models import Sum
-
 
 # Create your models here.
-
-
-
 class UserReview(models.Model):
     """
-    Table for users add reviews and a sore out of
-    5 of teh wines they have bought
+    Model for users add reviews and a sore out of
+    5 of the wines they have bought
     """
     SCORES = (
         (1, '1'),
@@ -34,5 +28,5 @@ class UserReview(models.Model):
     buy_again = models.BooleanField(default=True)
 
     def __str__(self):
-        return self.wine
+        return self.wine.wine_name
 

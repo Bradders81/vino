@@ -6,9 +6,8 @@
 
 <form action="">
   <div class="mb-3">
-    <label for="exampleFormControlTextarea1" class="form-label">Review</label>
-    <textarea class="form-control" placeholder="300 characters" id="exampleFormControlTextarea1" rows="3"></textarea>
-  </div>
+    {% csrf_token %}
+    {{ form|crispy }}
 </form>
 
 {% endblock %}
