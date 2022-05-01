@@ -1,5 +1,5 @@
 let stripe_public_key = $('#id_stripe_public_key').text().slice(1, -1);
-let client_secret = $('#id_client_secret').text().slice(1, -1);
+let clientSecret = $('#id_client_secret').text().slice(1, -1);
 let stripe = Stripe(stripe_public_key);
 let elements = stripe.elements();
 let card = elements.create('card', {style: style});
@@ -55,7 +55,7 @@ form.addEventListener('submit', function(ev) {
     var url = '/checkout/cache_checkout_data/';
 
     $.post(url, postData).done(function () {
-        stripe.confirmCardPayment(client_secret, {
+        stripe.confirmCardPayment(clientSecret, {
             payment_method: {
                 card: card,
                 billing_details: {
