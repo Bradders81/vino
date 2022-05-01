@@ -2,6 +2,7 @@ from django import forms
 from .models import UserReview
 
 
+
 class UserReviewForm(forms.ModelForm):
     """
     Form for users to add a review of a product.
@@ -9,7 +10,9 @@ class UserReviewForm(forms.ModelForm):
     class Meta:
         model = UserReview
         fields = '__all__'
-        exclude = ('user_profile',)
+        exclude = ('user',)
+        
+   
 
     def __init__(self, *args, **kwargs):
         super(UserReviewForm, self).__init__(*args, **kwargs)
@@ -19,15 +22,15 @@ class UserReviewForm(forms.ModelForm):
             'wine': 'wine',
             'review': 'Write you review here.....',
             'score': 'score',
-            'buy_again': 'Buy Again?'
-            
+            'buy_again': 'Buy Again?',
+            'user': 'username',
         }
 
         self.fields['review_name'].widget.attrs['autofocus'] = True
+
         for field in self.fields:
             if self.fields[field].required:
                 placeholder = f'{placeholders[field]} *'
             else:
                 placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
-         

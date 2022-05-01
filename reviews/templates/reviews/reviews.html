@@ -13,11 +13,12 @@
 <div class="container-fluid">
   <div class="row">
     <col-12 class="col-md-6">
-    <form form class="row g-3" action="{% url 'reviews' %}" method="POST" id="review-form"></form>
+    <form form class="row g-3" method="POST" action="{% url 'reviews' %}" id="review-form">
       <div class="mb-3">
         {% csrf_token %}
         {{ form|crispy }}
-        <a href="" class="btn btn-warning">Submit</a>
+        <input href="" type="submit" value ="submit" class="btn btn-warning"></input>
+      </div>
     </form>
     </col-12>
   </div>
