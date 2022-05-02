@@ -48,11 +48,23 @@ def product_info(request, pk):
 
     return render(request, 'products/product-info.html', context)
 
+
 def add_product(request):
     """
     View for adding products to the online shop
     """
-    form = ProductForm
-    context = {'form': form,}
+    if request.method == 'POST':
+        form = ProductForm(request.Post, request.FILES)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Product Added')
+        else:
+            messages.error(
+                request, 'Products not added, Please check form is valid')
+    else:
+        form = ProductForm
+    context = {'form': form, }
 
-    return render(request, 'products/add_product.html', context)
+    return render(request, 'products/add-product.html', context)
+
+    
