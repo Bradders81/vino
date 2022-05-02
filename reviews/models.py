@@ -16,12 +16,13 @@ class UserReview(models.Model):
         (4, '5'),
     )
 
-    user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
+    user = models.ForeignKey(
+        User, on_delete=models.SET_NULL, null=True, blank=True)
     review_name = models.CharField(max_length=50, null=True, blank=True)
     wine = models.ForeignKey(
         Wine, on_delete=models.SET_NULL, null=True, blank=True)
     date = models.DateTimeField(auto_now_add=True)
-    score = models.IntegerField(
+    rating = models.IntegerField(
         choices=SCORES, null=False, blank=True, default=1)
     review = models.TextField(null=True, blank=True)
     buy_again = models.BooleanField(default=True)
