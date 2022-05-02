@@ -23,8 +23,7 @@ def profile(request):
         'user_profile': user_profile,
         'form': form,
         'orders': orders,
-        'on_profile_page': True
-        }
+    }
     return render(request, 'profiles1/profile.html', context)
 
 
@@ -41,7 +40,6 @@ def order_history(request, order_number):
 
     context = {
         'order': order,
-        'from_profile': True,
     }
 
     return render(request, 'checkout/checkout_success.html', context)

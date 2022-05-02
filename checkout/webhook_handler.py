@@ -1,11 +1,14 @@
 from django.http import HttpResponse
+from django.core.mail import send_mail
+from django.template.loader import render_to_string
+from django.conf import settings
 
 class StripeWH_Handler:
     """Handle Stripe webhooks"""
 
     def __init__(self, request):
         self.request = request
-
+    
     def handle_event(self, event):
         """
         Handle a generic/unknown/unexpected webhook event
@@ -19,7 +22,7 @@ class StripeWH_Handler:
         Handle payment intent succeeded webhook (Stripe)
         """
         intent = event.data.object
-        print('DID IT WORK', intent)
+
         return HttpResponse(
             content=f'Webhook received: {event["type"]}',
             status=200)
