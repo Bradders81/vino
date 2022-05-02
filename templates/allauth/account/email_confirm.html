@@ -7,6 +7,9 @@
 
 
 {% block content %}
+<div class="containr-fluid">
+	<div class="row">
+		<div class="col-12 col-md-4 offset-md-4 center form-container">
 <h1>{% trans "Confirm E-mail Address" %}</h1>
 
 {% if confirmation %}
@@ -17,9 +20,11 @@
 
 <form method="post" action="{% url 'account_confirm_email' confirmation.key %}">
 {% csrf_token %}
-    <button type="submit">{% trans 'Confirm' %}</button>
+    <button class="btn btn-warning" type="submit">{% trans 'Confirm' %}</button>
 </form>
-
+        </div>
+    </div>
+</div>
 {% else %}
 
 {% url 'account_email' as email_url %}

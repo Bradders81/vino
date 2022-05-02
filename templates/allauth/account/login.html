@@ -1,7 +1,5 @@
 {% extends "account/base.html" %}
 
-
-
 {% load i18n %}
 
 {% load account socialaccount %} 
@@ -45,7 +43,7 @@
 
 			<form  class="logsin" method="POST" action="{% url 'account_login' %}">
 				{% csrf_token %} 
-        {{ form.as_p }} 
+        {{ form|crispy }} 
         {% if redirect_field_value %}
 				<input
    				type="hidden"
