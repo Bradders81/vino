@@ -2,6 +2,7 @@ from django.shortcuts import render, get_object_or_404
 from django.db.models import Q
 from django.contrib import messages
 from .models import Wine
+from .forms import ProductForm
 
 # Create your views here.
 
@@ -36,7 +37,6 @@ def products(request):
     context = {'wines': wines}
     return render(request, 'products/products.html', context)
 
-
 def product_info(request, pk):
     """
     Returns the product selected by the user to the product info page
@@ -47,3 +47,12 @@ def product_info(request, pk):
     context = {'wines': wines, 'bottle': bottle, }
 
     return render(request, 'products/product-info.html', context)
+
+def add_product(request):
+    """
+    View for adding products to the online shop
+    """
+    form = ProductForm
+    context = {'form': form,}
+
+    return render(request, 'products/add_product.html', context)
