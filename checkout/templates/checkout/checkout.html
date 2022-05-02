@@ -8,7 +8,7 @@
 {% block content %}
 <h1 class="center">Checkout</h1>
 <div class="center">
-    <h5><strong>Basket Total: <span class="total-col"> ${{ total }}</span></strong></h5>
+    <h5><strong>Basket Total: <span class="total-col"> £{{ total }}</span></strong></h5>
 </div>
 <div class="container-fluid center">
     <div class="row">
@@ -69,7 +69,7 @@
                         <span class="icon">
                             
                         </span>
-                        <span>Your card will be charged <strong>${{ total|floatformat:2 }}</strong></span>
+                        <span>Your card will be charged <strong>£{{ total|floatformat:2 }}</strong></span>
                     </p>
                 {{orders}}
             </form>
