@@ -1,9 +1,7 @@
 from django.shortcuts import render, redirect
-from django.contrib import messages
 from .forms import UserReviewForm
 from .models import UserReview
-
-# from products .models import Wine
+from django.contrib import messages
 
 
 # Create your views here.
@@ -13,6 +11,8 @@ def user_reviews(request):
     they have bought
     """
     form = UserReviewForm
+    reviews = UserReview.objects.filter(user=request.user)
+
 
     if request.POST:
         form = UserReviewForm(request.POST)
@@ -23,9 +23,8 @@ def user_reviews(request):
             messages.success(
                 request, ("Your review has been added."))
         return redirect('reviews')
-
-    context = {'form': form}
+    
+    context = {'form': form, 'reviews': reviews, }
 
     return render(request, 'reviews/reviews.html', context)
-
 

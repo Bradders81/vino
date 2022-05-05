@@ -11,8 +11,7 @@ class UserReviewForm(forms.ModelForm):
         model = UserReview
         fields = '__all__'
         exclude = ('user',)
-        
-   
+
 
     def __init__(self, *args, **kwargs):
         super(UserReviewForm, self).__init__(*args, **kwargs)
