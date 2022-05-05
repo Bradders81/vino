@@ -29,7 +29,6 @@
 			<table class="table">
 				<thead>
 					<tr>
-						<th scope="col"></th>
 						<th scope="col">Order Number</th>
 						<th scope="col">Date and Time</th>
 						<th scope="col">Order Total</th>
@@ -38,7 +37,6 @@
 				<tbody>
 				{% for order in orders %}
 					<tr>
-						<td></td>
 						<td>
 						<a href="{% url 'order_history' order.order_number %}" title="{{ order.order_number }}">{{ order.order_number|truncatechars:6 }}</a>
 						</td>
@@ -46,10 +44,6 @@
 						<td>£{{ order.order_total }}</td>
 					</tr>
 					{% endfor %}
-					<tr>
-					<td></td>
-					<td>{{ item.wine.wine_name }}</td>
-					<td>{{ item.wine.wine_type }}</td>
 				</tbody>
 			</table>
 		</div>
