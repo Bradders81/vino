@@ -67,4 +67,14 @@ def add_product(request):
 
     return render(request, 'products/add-product.html', context)
 
+
+def edit_product(request, product_id):
+    """
+    Edit a prodcut in the online shop
+    """
+    product = get_object_or_404(Wine, pk=product_id)
+    form = ProductForm(instance=product)
+
+    context = {'form': form, 'product': product, }
     
+    return render(request, products/edit_product.html, context)

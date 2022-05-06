@@ -14,7 +14,15 @@
             
             <hr>
             <p>Type: {{ bottle.wine_type }}</p>
-            <p>Rating: {{ bottle.rating }} / 5 <a href="{% url 'display_wine_reviews' bottle.id %}">(Reviews)</a></p>
+            <div>
+            <p>Rating: {{ bottle.rating }} / 5 <a href="{% url 'display_wine_reviews' bottle.id %}">(Reviews)</a> - <a href="{% url 'reviews' %}"><small></small>Write a Review</small></a></p>
+            {% if request.user.is_authenticated %}
+            
+            {% endif %}
+        </div>
+
+        
+            
             <p>Price £ {{ bottle.price }}</p>
             <form class="form"  action="{% url 'add_to_basket' bottle.id %}" method="POST">
                 {% csrf_token %}
