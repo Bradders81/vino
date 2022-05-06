@@ -8,11 +8,11 @@ from django.contrib import messages
 def user_reviews(request):
     """
     A view to allow users to add a review of the wine
-    they have bought
+    they have bought.  Only login in users can leave
+    a review
     """
     form = UserReviewForm
     reviews = UserReview.objects.filter(user=request.user)
-
 
     if request.POST:
         form = UserReviewForm(request.POST)
@@ -27,4 +27,18 @@ def user_reviews(request):
     context = {'form': form, 'reviews': reviews, }
 
     return render(request, 'reviews/reviews.html', context)
+
+
+def display_wine_reviews(request, wine_id):
+    """
+    A view to display a the reviews for a particular wine
+    to a user.  The user does not have to be logged in
+    """
+    reviews = UserReview.objects.filter(wine_id=wine_id)
+    bottle = wine_id
+    
+    
+    context = {'reviews': reviews, 'bottle': bottle, }
+
+    return render(request, 'reviews/product_reviews.html', context)
 

@@ -1,0 +1,29 @@
+{% extends 'base.html' %} 
+
+{% block content %}
+
+<div class="row center mt-5">
+    <div class="container">
+    <div class="col-12 col-md-6 center offset-md-3">
+    <h1> Customer Reviews </h1>
+    </div>
+   
+    <br>
+    <!-- Table to show the reviews for a particular wine -->
+    
+        <div class="col-12 col-md-6 center offset-md-3">
+            {% for review in reviews %}
+            <div class="review-box">
+                <h5> <strong> Title: {{ review.review_name}}</strong></h5>
+                <p>{{ review.review }}</p>
+                <div>User Rating: {{review.rating}} / 5</div>
+                <div>Date & time: {{review.date }}</div>
+                <hr>
+            {% endfor %}
+            </div>
+            <a class="btn btn-danger" href="{% url 'product-info' bottle %}">Back</a>
+        </div>
+</div>
+</div>
+
+{% endblock %}
