@@ -70,7 +70,7 @@ def add_product(request):
 
 def edit_product(request, pk):
     """
-    Edit a prodcut in the online shop
+    View to allow editing a product in the online shop
     """
     product = get_object_or_404(Wine, id=pk)
     if request.method == 'POST':
@@ -89,3 +89,10 @@ def edit_product(request, pk):
     
     return render(request, 'products/edit_product.html', context)
 
+
+def delete_product(request, pk):
+    """ Delete a  wine product from the online shop """
+    product = get_object_or_404(Wine, id=pk)
+    product.delete()
+    messages.success(request, 'Product deleted!')
+    return redirect(reverse('products'))
