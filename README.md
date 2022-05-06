@@ -23,20 +23,18 @@ ____
 
 *"I want a website that I can navigate easily.”
 “I want to be able to have my own profile.”
-“I want to be able to filter between search results”
+“I want to be able to search for the wines I want results”
+"I want to be able to look for wines by color (red, white, rose)
 “I want to be able to leave a review and read reviews of other users”
-“I want to be able to delete my review”
-"I want to be able to amend and delete my profile information"
+"I want to be able to amend my profile information"
 “I want to be able to use the site on mobile devices”*
 
+### Owner
+*"I want to be be able to add and update products"
+"I want to be able to take payment online"
+"I want to be able to receive online orders*
+
 ____
-# Current Position of the Project
-
-Due to personal reasons I have not been able to complete the work on this project before the submission deadline.  The development site works better than the deployed site which has a bug with the user profile.  This results in an error for most of the functionality, given the relationships between the models.  There is currently more functionality in development, if the server is run from gitpod.
-
-Credit:
-I have followed the the Code Institute Boutique Ado Project very closely, especially with the checkout and profile app.  My initial profile app seem to encounter some corruption with the database and given the my limited time I had to create another profile app from scratch 'Profiles' is therefore not used and the one used is 'Profiles1'.  At this stage I have not removed the old Profiles app.  I have not yet removed the old Profile App 
-
 
 ## UX
 
@@ -158,7 +156,7 @@ Image credits will go here
 
 **Google Fonts:**  Fonts for this project are from Google Fonts.  The import at the top of the CSS file was copied from Google Fonts.
 
-**Mail Icon:** The icons used in the site are from Font Awesome
+**Icons:** The icons used in the site are from Font Awesome
 
 **Code Institue** The logic in building this app has come from my learning in the Code Institute Full Stack Developer Course and influenced from the mini work though project: Task List
 

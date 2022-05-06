@@ -38,7 +38,8 @@
 		
 		{% endblock %}
 	</head>
-	<body>
+	<body id="content">
+		<div>
 		{% include 'navbar.html' %}
 		
 		<div id="top-banner" class="center">
@@ -52,7 +53,7 @@
 		</div>
 		{% block content %} 
 		{% endblock %}
-		<footer>
+		<footer class="footer">
 			<div class="container-fluid">
 				<div id="footer-style"  class="row center no-gutters">
 					<div class="col-4">Contact Info</div>
@@ -66,8 +67,10 @@
 					</div>
 				</div>
 			</div>
+		</div>
 		</footer>
 		{% block postloadjs %}
 		{% endblock %}
+	
 	</body>
 </html>

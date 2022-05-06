@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Festive&family=Roboto&display=swap');
 
-
-/* ----------------------------------------------------  
-font-family: 'Festive', cursive; (Logo)
-font-family: 'Roboto', sans-serif; (main family used)
-------------------------------------------------------*/
-
 /*----- Site defaults ----- */
 * {
     margin: 0;
@@ -13,6 +7,13 @@ font-family: 'Roboto', sans-serif; (main family used)
     border: 0;
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
+}
+
+html, body {height: 100%;}
+
+body > footer {
+    position: sticky;
+    top: 100vh;
 }
 
 #top-banner {

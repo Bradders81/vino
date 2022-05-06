@@ -20,7 +20,6 @@ class UserReviewForm(forms.ModelForm):
             'review_name': 'Review Title',
             'wine': 'wine',
             'review': 'Write you review here.....',
-            'rating': 'rating',
             'buy_again': 'Buy Again?',
             'user': 'username',
         }
