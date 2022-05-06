@@ -31,6 +31,13 @@
                 <a href="{% url 'products' %}" class="btn btn-danger">Back</a>
                 <input type="hidden" name="redirect_url" value="{{ request.path }}">
             </form>
+            {% if request.user.is_superuser %}
+            <div class="mt-4">
+                <a class="btn btn-danger" href="{% url 'edit_product' bottle.id %}">Edit Wine Info</a>
+                <a class="btn btn-success" href="{% url 'delete_product' bottle.id %}">Delete Wine</a>
+            {% endif %}
+
+            </div>
         </div>
         <div class="col-12 col-md-6 center">
             {% if bottle.image %}
