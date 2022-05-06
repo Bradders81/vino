@@ -15,8 +15,8 @@ def profile(request):
         if form.is_valid():
             form.save()
             messages.success(request, 'Profile updated successfully')
-
-    form = UserProfileForm(instance=user_profile)
+    else:
+        form = UserProfileForm(instance=user_profile)
     orders = user_profile.orders.all()
 
     context = {
@@ -35,12 +35,10 @@ def order_history(request, order_number):
     order = get_object_or_404(Order, order_number=order_number)
 
     messages.info(request, (
-        'Past Order confirmation, order no. {order_number}'
+        'Past Order confirmation'
     ))
 
-    context = {
-        'order': order,
-    }
+    context = {'order': order, }
 
     return render(request, 'checkout/checkout_success.html', context)
 

@@ -17,7 +17,10 @@
 				<h5>Username: {{user}}</h5>
 				{% csrf_token %}
 				{{ form|crispy }}
+				<div>
 				<button type="submit" class="btn btn-danger">Update Information</button>
+				<a class="btn btn-warning" href="{% url 'reviews' %}">My Reviews</a>
+			</div>
 			</form>
 
 			</form>

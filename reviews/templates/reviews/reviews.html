@@ -40,7 +40,7 @@
           {% for review in reviews %}
           <tr>
             <td>
-              <a href="" >{{ review.review_name }}</a>
+              <a href="{% url 'review_details' review.id %}">{{ review.review_name }}</a>
             </td>
             <td>{{ review.wine }}</td>
             <td>{{ review.date }}</td>
