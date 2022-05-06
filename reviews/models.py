@@ -18,7 +18,7 @@ class UserReview(models.Model):
     )
     user = models.ForeignKey(
         User, on_delete=models.SET_NULL, null=True, blank=True)
-    review_name = models.CharField(max_length=50, null=False, blank=False)
+    review_name = models.CharField(max_length=50, null=False, blank=False, default='No Title')
     wine = models.ForeignKey(
         Wine, on_delete=models.SET_NULL, null=True, blank=False)
     date = models.DateTimeField(auto_now_add=True)

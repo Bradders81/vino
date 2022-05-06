@@ -1,11 +1,11 @@
 from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.db.models import Q
 from django.contrib import messages
+from django.contrib.auth.decorators import login_required
 from .models import Wine
 from .forms import ProductForm
 
 # Create your views here.
-
 
 def products(request):
     """
@@ -49,6 +49,7 @@ def product_info(request, pk):
     return render(request, 'products/product-info.html', context)
 
 
+@login_required
 def add_product(request):
     """
     View for adding products to the online shop
@@ -67,7 +68,7 @@ def add_product(request):
 
     return render(request, 'products/add_product.html', context)
 
-
+@login_required
 def edit_product(request, pk):
     """
     View to allow editing a product in the online shop
@@ -89,7 +90,7 @@ def edit_product(request, pk):
     
     return render(request, 'products/edit_product.html', context)
 
-
+@login_required
 def delete_product(request, pk):
     """ Delete a  wine product from the online shop """
     product = get_object_or_404(Wine, id=pk)

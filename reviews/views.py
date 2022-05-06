@@ -1,10 +1,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
+from django.contrib.auth.decorators import login_required
 from .forms import UserReviewForm
 from .models import UserReview
 from django.contrib import messages
 
 
 # Create your views here.
+@login_required
 def user_reviews(request):
     """
     A view to allow users to add a review of the wine
@@ -51,7 +53,7 @@ def review_details(request, review_id):
     bottle = get_object_or_404(UserReview, id=review_id)
     product_id = review_id
 
-    context = { 'bottle': bottle, 'product_id': product_id, }
+    context = {'bottle': bottle, 'product_id': product_id, }
 
     return render(request, 'reviews/review_details.html', context)
 
