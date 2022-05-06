@@ -4,7 +4,7 @@ from .models import Wine
 class ProductForm(forms.ModelForm):
 
     """
-    Form for superuser/site owner to 
+    Form for superuser/site owner to
     update products.
     |"""
 

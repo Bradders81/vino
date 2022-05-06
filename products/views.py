@@ -65,7 +65,7 @@ def add_product(request):
         form = ProductForm
     context = {'form': form, }
 
-    return render(request, 'products/add-product.html', context)
+    return render(request, 'products/add_product.html', context)
 
 
 def edit_product(request, product_id):
