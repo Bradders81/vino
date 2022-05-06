@@ -19,8 +19,7 @@
             {% if request.user.is_authenticated %}
             <a class="btn btn-warning" href="{% url 'reviews' %}"><small></small>Write a Review</small></a>
             {% endif %}
-      
-            
+
             <p>Price £ {{ bottle.price }}</p>
             <form class="form"  action="{% url 'add_to_basket' bottle.id %}" method="POST">
                 {% csrf_token %}

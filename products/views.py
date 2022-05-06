@@ -1,4 +1,4 @@
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, redirect, reverse, get_object_or_404
 from django.db.models import Q
 from django.contrib import messages
 from .models import Wine
@@ -54,7 +54,7 @@ def add_product(request):
     View for adding products to the online shop
     """
     if request.method == 'POST':
-        form = ProductForm(request.Post, request.FILES)
+        form = ProductForm(request.POST, request.FILES)
         if form.is_valid():
             form.save()
             messages.success(request, 'Product Added')
@@ -68,13 +68,24 @@ def add_product(request):
     return render(request, 'products/add_product.html', context)
 
 
-def edit_product(request, product_id):
+def edit_product(request, pk):
     """
     Edit a prodcut in the online shop
     """
-    product = get_object_or_404(Wine, pk=product_id)
-    form = ProductForm(instance=product)
+    product = get_object_or_404(Wine, id=pk)
+    if request.method == 'POST':
+        form = ProductForm(request.POST, request.FILES, instance=product)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Successfully updated product!')
+            return redirect(reverse('product-info', args=[product.id]))
+        else:
+            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+    else:
+        form = ProductForm(instance=product)
+   
 
     context = {'form': form, 'product': product, }
     
-    return render(request, products/edit_product.html, context)
+    return render(request, 'products/edit_product.html', context)
+

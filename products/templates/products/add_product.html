@@ -10,7 +10,7 @@
 <div class="container center">
     <div class="row center">
         <div class="col-12 col-md-6 form-container center mb-5">
-            <form  class="center" method="POST" action="{url 'add-product' %}" enctype="multipart/form-data">
+            <form  class="center" method="POST" action="{% url 'add_product' %}" enctype="multipart/form-data">
                 {% csrf_token %}
                 {{ form|crispy }}
                 <br>
