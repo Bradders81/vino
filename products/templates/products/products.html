@@ -2,35 +2,35 @@
 
 <div class="container-fluid ">
 	<div class="row center">
+
+		{% if request.user.is_superuser %}
+		<div class="col-12">
+			<div>
+				<a class="btn btn-warning mt-4" href="{% url 'add_product' %}">Add Products</a>
+			</div>
+		</div>
+		{% endif %}
+
 		{% for wine in wines %}
 		<div id="card-container" class="col-12 col-md-4 col-lg-3">
 			<div class="card h-100 m-4">
 				{% if wine.image %}
 					<img
-						src="{{ wine.image.url }}"
-						class="card-image card-img-top"
-						alt=" Bottle of wine"
-					/>
+						src="{{ wine.image.url }}" class="card-image card-img-top"
+						alt=" Bottle of wine"/>
 					{% else %}
-					<img
-						src="../../../media/images/default.png"
+					<img src="../../../media/images/default.png"
 						class="card-image card-img-top"
-						alt=" Bottle of wine"
-					/>
+						alt=" Bottle of wine"/>
 					{% endif %}
-				
-				<div class="card-body-size ">
+
+				<div class="card-body-size">
 					<h6><strong>{{ wine.wine_name }}</strong></h6>
 					<p>Price £ {{wine.price }}</p>
 					<p>Type: {{ wine.wine_type }} - Year {{wine.year}}</p>
-					<p>Rating: {{wine.rating }}</p>
 					<div class="card-btn">
-						<a
-							href="{% url 'product-info' wine.id %}"
-							class="btn btn-danger "
-							>Wine Info</a
-						>
-						
+						<a href="{% url 'product-info' wine.id %}" class="btn btn-danger "
+							>Wine Info</a>
 					</div>
 				</div>
 			</div>
