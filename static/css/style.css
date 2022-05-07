@@ -9,13 +9,6 @@
     box-sizing: border-box;
 }
 
-html, body {height: 100%;}
-
-body > footer {
-    position: sticky;
-    top: 100vh;
-}
-
 #top-banner {
     background-color: #8a0c0c;
     height: 26px;
@@ -188,6 +181,16 @@ label {
 }
 
 /*------- Footer ------*/
+footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    background-color: red;
+    color: white;
+    text-align: center;
+ }
+
 #footer-style div{
     height: 40px;
     background-color: #8a0c0c;
