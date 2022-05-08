@@ -5,7 +5,7 @@ from .models import UserReview
 
 class UserReviewForm(forms.ModelForm):
     """
-    Form for users to add a review of a product.
+    Form for users to add and edit a review of a product.
     """
     class Meta:
         model = UserReview
@@ -32,3 +32,14 @@ class UserReviewForm(forms.ModelForm):
             else:
                 placeholder = placeholders[field]
                 self.fields[field].widget.attrs['placeholder'] = placeholder
+
+# class ProductForm(forms.ModelForm):
+
+#     """
+#     Form for superuser/site owner to
+#     update products.
+#     |"""
+
+#     class Meta:
+#         model = Wine
+#         fields = '__all__'

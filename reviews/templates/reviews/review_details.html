@@ -2,31 +2,30 @@
 
 {% block content %}
 
-<div class="row center mt-5">
-    <div class="container">
-    <div class="col-12 col-md-6 center offset-md-3">
-    <h1> My Review of: {{ bottle }} </h1>
+<div class="container center">
+    <div class="row mt-5">
+        <div class="col-12 col-md-6 center offset-md-3">
+        <h1> My Review of: {{ bottle }} </h1>
+        </div>
     </div>
-
     <br>
     <!-- Table to show the reviews for a particular wine -->
-    
-        <div class="col-12 col-md-6 center offset-md-3">
-            
-            <div class="review-box">
+    <div class="row">
+            <div class="col-12 col-md-6 center offset-md-3">
+                <div class="review-box">
                 <h5> <strong> Title: {{ bottle.review_name}}</strong></h5>
                 <p>{{ review.review }}</p>
                 <div>User Rating: {{ bottle.rating }} } / 5</div>
                 <div> Review: </div>
                 <p> {{ bottle.review }}</p>
-                <div>Date & time: {{ bottle.date }}</div>
+                <div>Posted: {{ bottle.date }}</div>
                 <hr>
-        
             </div>
+            <a class="btn btn-danger mb-5" href="{% url 'edit_review' review_id %}">Edit Review</a>
             <a class="btn btn-danger mb-5" href="{% url 'reviews' %}">Back</a>
-            
         </div>
+    </div>
 </div>
-</div>
+
 
 {% endblock %}

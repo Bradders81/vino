@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect, get_object_or_404
+from django.shortcuts import render, reverse, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .forms import UserReviewForm
 from .models import UserReview
@@ -51,9 +51,32 @@ def review_details(request, review_id):
     """
     
     bottle = get_object_or_404(UserReview, id=review_id)
-    product_id = review_id
+    review_id = review_id
 
-    context = {'bottle': bottle, 'product_id': product_id, }
+    context = {'bottle': bottle, 'review_id': review_id, }
 
     return render(request, 'reviews/review_details.html', context)
 
+
+@login_required
+def edit_review(request, review_id):
+    """
+    View to allow a user to edit their review
+    """
+    review = get_object_or_404(UserReview, id=review_id)
+    if request.method == 'POST':
+        form = UserReviewForm(request.POST,  instance=review)
+        print(form)
+        if form.is_valid():
+            form.save()
+            messages.success(request, 'Your review has been updated!')
+            redirect(reverse('review_details', args=[review.id]))
+        else:
+            messages.error(request, 'Failed to update review. Please /n'
+                                    'ensure the form is valid.')
+    else:
+        form = UserReviewForm(instance=review)
+
+    context = {'form': form, 'review': review, }
+
+    return render(request, 'reviews/edit_review.html', context)

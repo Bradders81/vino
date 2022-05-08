@@ -8,6 +8,7 @@
 			<h1 class="center">Profile</h1>
 		</div>
 	</div>
+	
 	<div class="row">
 		<div class="col-12 col-md-6 center">
 			<h4><strong> Personal Info</strong></h4>
@@ -18,11 +19,10 @@
 				{% csrf_token %}
 				{{ form|crispy }}
 				<div class="mb-5">
-					<button type="submit" class="btn btn-danger">Update Information</button>
-				<a class="btn btn-warning" href="{% url 'reviews' %}">My Reviews</a>
-			</div>
-			</form>
 
+					<button type="submit" class="btn btn-danger">Update Information</button>
+					<a class="btn btn-warning" href="{% url 'reviews' %}">My Reviews</a>
+				</div>
 			</form>
 		</div>
 		
