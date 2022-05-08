@@ -3,7 +3,9 @@ from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from .models import UserProfile
 from .forms import UserProfileForm
+from django.contrib.auth.models import User
 from checkout.models import Order
+
 
 @login_required
 def profile(request):
@@ -27,19 +29,34 @@ def profile(request):
     }
     return render(request, 'profiles1/profile.html', context)
 
+
+@login_required
+def delete_user(request, username):
+    """
+    View to allow a user to delete their account.
+    """
+    user = User.objects.get(username=username)
+    if request.user.is_superuser:
+        messages.success(request, 'Only customers can delete their account /n'
+                         'this way. Please contact your site Administrator')
+    else:
+        user.delete()
+        messages.success(request, f'{user.username} account deleted!')
+    return redirect(reverse('home'))
+
+
 @login_required
 def order_history(request, order_number):
 
     """
-    Used to display past orders to the user
+    Used to display past orders to the user superusers to make 
+    sure the site always has at least 1 superuser, superusers cannot
+    delete their account 
     """
     order = get_object_or_404(Order, order_number=order_number)
 
-    messages.info(request, (
-        'Past Order confirmation'
-    ))
+    messages.info(request, ('Past Order confirmation'))
 
     context = {'order': order, }
 
     return render(request, 'checkout/checkout_success.html', context)
-

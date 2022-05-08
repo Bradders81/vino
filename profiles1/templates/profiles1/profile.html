@@ -15,15 +15,42 @@
 			<hr />
 			<!-- Credit: Bootstrap Form and customised for this project-->
 			<form class="row g-3" action="{% url 'profile' %}" method="POST" id="profile-form">
-				<h5>Username: {{user}}</h5>
+				<h5>Username: {{ user }}</h5>
 				{% csrf_token %}
 				{{ form|crispy }}
 				<div class="mb-5">
-
 					<button type="submit" class="btn btn-danger">Update Information</button>
-					<a class="btn btn-warning" href="{% url 'reviews' %}">My Reviews</a>
 				</div>
 			</form>
+			<div>
+				{% if not request.user.is_superuser %}
+			<!-- Credit: Modal from Bootstrap and amended for this project -->
+            <!-- Button trigger modal -->
+            <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#staticBackdrop">Delete Your account.</button>
+            <!-- Modal -->
+            <div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel"> Delete {{ user }}'s Account</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            <p> Are you want to delete your account?  You will no longer be able to leave reviews or keep track of your order history</p>
+                            <p><strong>Warning:Once you delete your account this cannot be undone.</strong></p>
+                            <button type="button" class="btn btn-warning" data-bs-dismiss="modal">Cancel</button>
+                        </div>
+                        <div class="modal-footer center">
+                            <a  class="btn btn-danger" href="{% url 'delete_user' user.username %}">Delete</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+			{% endif %}
+				
+			
+				<a class="btn btn-warning" href="{% url 'reviews' %}">My Reviews</a>
+			</div>
 		</div>
 		
 		<div class="col-12 col-md-6 center">
