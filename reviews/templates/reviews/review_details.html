@@ -11,8 +11,8 @@
     <br>
     <!-- Table to show the reviews for a particular wine -->
     <div class="row">
-            <div class="col-12 col-md-6 center offset-md-3">
-                <div class="review-box">
+        <div class="col-12 col-md-6 center offset-md-3">
+            <div class="review-box">
                 <h5> <strong> Title: {{ bottle.review_name}}</strong></h5>
                 <p>{{ review.review }}</p>
                 <div>User Rating: {{ bottle.rating }} } / 5</div>
@@ -21,8 +21,11 @@
                 <div>Posted: {{ bottle.date }}</div>
                 <hr>
             </div>
-            <a class="btn btn-danger mb-5" href="{% url 'edit_review' review_id %}">Edit Review</a>
-            <a class="btn btn-danger mb-5" href="{% url 'reviews' %}">Back</a>
+            <div>
+                <a class="btn btn-warning mb-5" href="{% url 'reviews' %}">Back</a>
+                <a class="btn btn-warning mb-5" href="{% url 'edit_review' review_id %}">Edit Review</a>
+                <a class="btn btn-danger mb-5" href="{% url 'delete_review' review_id %}">Delete Review</a>
+            </div>
         </div>
     </div>
 </div>
