@@ -109,7 +109,6 @@ nav .navbar-nav li a {
 }
 
 /*----- Products Page -----*/
-
 #card-container {
     margin: 10px;
     height: 578px;
@@ -161,11 +160,6 @@ box-shadow: #d8d2d2 4px 4px 4px 4px;
 }
 
 /*----- Form Templates -----*/
-/* .form-container {
-    display: flex;
-    flex-direction: column;
-    height: 100vh;
-} */
 
 .form-container {
     margin-top: 5vh;
@@ -186,18 +180,13 @@ footer {
     left: 0;
     bottom: 0;
     width: 100%;
-    background-color: red;
-    color: white;
     text-align: center;
- }
-
-#footer-style div{
     height: auto;
     background-color: #8a0c0c;
     color: #fff;
-    
 }
 
+#contact,
 #social ul li{
     text-decoration: none;
     text-align: center;
@@ -206,10 +195,12 @@ footer {
     margin-top: 5px;
 }
 
+#contact,
 #social ul li i{
     color: #fff;
 }
 
+#contact i:hover,
 #social ul li i:hover{
     color: #000;
 }

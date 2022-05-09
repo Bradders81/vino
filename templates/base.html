@@ -34,6 +34,7 @@
 			integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
 			crossorigin="anonymous"
 		></script>
+		<script src="{% static './js/script.js' %}" ></script>
 		<script src="https://js.stripe.com/v3/"></script>
 		
 		{% endblock %}
@@ -56,7 +57,7 @@
 		<footer class="footer">
 			<div class="container-fluid">
 				<div id="footer-style"  class="row center no-gutters">
-					<div class="col-4">Contact Info</div>
+					<div class="col-4"><a id="contact" href="mailto:infovino89@gmail.com"><i class="fas fa-envelope fa-lg"></i></a></div>
 					<div class="col-4"><p>Site For Education Purposes</p> </div>
 					<div class="col-4" id="social">
 						<ul>
