@@ -1,7 +1,7 @@
 {% load static %}
 
 <!-- *Credit* navbar from bootstrap and then modified for this project -->
-<nav class="navbar sticky-top navbar-expand-lg navbar-dark bg-light">
+<nav class="navbar sticky-top navbar-expand-lg bg-light">
 	<div class="container-fluid">
 		<a id="logo" class="navbar-brand" href="{% url 'home' %}">Vino</a>
 		<button
@@ -13,7 +13,7 @@
 			aria-expanded="false"
 			aria-label="Toggle navigation"
 		>
-			<span class="navbar-toggler-icon"></span>
+			<span class="navbar-toggler-icon bg-dark"></span>
 		</button>
 		<div class="collapse navbar-collapse" id="navbarSupportedContent">
 			<form class="mx-auto d-flex" action=" {% url 'products' %}" method="get">
