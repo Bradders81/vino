@@ -58,3 +58,17 @@ def change_quantity(request, pk):
             request.session['basket'] = basket
 
     return redirect(redirect_url)
+
+
+def remove_from_basket(request, pk):
+    """
+    Allows users to remove an item
+    from their basket
+    """
+    basket = request.session.get('basket')
+    product = pk
+    basket.pop(product)
+    request.session['basket'] = basket
+    messages.success(request, "Wine from basket")
+
+    return render(request, 'basket/basket.html')
