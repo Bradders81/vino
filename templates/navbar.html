@@ -13,7 +13,7 @@
 			aria-expanded="false"
 			aria-label="Toggle navigation"
 		>
-			<span class="navbar-toggler-icon bg-dark"></span>
+			<span id="bg-red"><i class="fas fa-wine-bottle fa-md"></i></span>
 		</button>
 		<form class="mx-auto d-flex" action=" {% url 'products' %}" method="get">
 				<input
@@ -81,11 +81,8 @@
 
 				<li class="nav-item">
 					<a class="nav-link" aria-current="page" href="{% url 'basket' %}" title="Basket"
-						><i class="fas fa-2x fa-shopping-basket"></i> £{{ total }}</a
-					>
-									</li>
-
-
+						><i class="fas fa-2x fa-shopping-basket"></i> £{{ total }}</a>
+				</li>
 				{% else %}
 				<li class="nav-item">
 					<a class="nav-link"
