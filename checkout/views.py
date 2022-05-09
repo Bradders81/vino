@@ -12,6 +12,7 @@ from profiles1.forms import UserProfileForm
 from .forms import OrderForm
 from .models import Order, OrderLineItem
 
+
 @require_POST
 def cache_checkout_data(request):
     try:
@@ -27,6 +28,7 @@ def cache_checkout_data(request):
         messages.error(request, 'Sorry, your payment cannot be \
             processed right now. Please try again later.')
         return HttpResponse(content=e, status=400)
+
 
 def checkout(request):
     """
@@ -67,7 +69,7 @@ def checkout(request):
                     )
                     order.delete()
                     return redirect(reverse('view_basket'))
-        
+
             request.session['save_info'] = 'save-info' in request.POST
             return redirect(
                 reverse('checkout_success', args=[order.order_number]))

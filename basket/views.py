@@ -4,7 +4,6 @@ from django.contrib import messages
 
 # Create your views here.
 
-
 def view_basket(request):
     """
     Renders the basket contents page
@@ -24,14 +23,13 @@ def add_to_basket(request, pk):
 
     if pk in list(basket.keys()):
         basket[pk] += quantity
-       
+        messages.success(request, "Item added to basket")
 
     else:
         basket[pk] = quantity
+        messages.success(request, "Item added to basket")
 
     request.session['basket'] = basket
-    # This cookie is needed for the change quantity view below
-    request.session['quantity'] = quantity
 
     return redirect(redirect_url)
 

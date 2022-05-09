@@ -5,8 +5,8 @@ from django.contrib.auth.decorators import login_required
 from .models import Wine
 from .forms import ProductForm
 
-# Create your views here.
 
+# Create your views here.
 def products(request):
     """
     Returns the Prodcuts page and handles
@@ -22,7 +22,7 @@ def products(request):
             Q(wine_type__icontains=search_query) |
             Q(country__icontains=search_query) |
             Q(year__icontains=search_query))
-        
+
         if not wines:
             messages.error(request, "Nothing matches your search")
 
@@ -36,6 +36,7 @@ def products(request):
 
     context = {'wines': wines}
     return render(request, 'products/products.html', context)
+
 
 def product_info(request, pk):
     """
@@ -68,6 +69,7 @@ def add_product(request):
 
     return render(request, 'products/add_product.html', context)
 
+
 @login_required
 def edit_product(request, pk):
     """
@@ -81,14 +83,14 @@ def edit_product(request, pk):
             messages.success(request, 'Successfully updated product!')
             return redirect(reverse('product-info', args=[product.id]))
         else:
-            messages.error(request, 'Failed to update product. Please ensure the form is valid.')
+            messages.error(request, 'Failed! Please ensure the form is valid.')
     else:
         form = ProductForm(instance=product)
-   
 
     context = {'form': form, 'product': product, }
-    
+
     return render(request, 'products/edit_product.html', context)
+
 
 @login_required
 def delete_product(request, pk):

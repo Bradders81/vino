@@ -1,7 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
 
-        let = ctaBtn
-        
         function callToActionWarning() {
         let ctaBtn = document.getElementById("btn-cta");
         ctaBtn.classList.remove("btn-danger");

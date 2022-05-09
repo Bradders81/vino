@@ -52,7 +52,6 @@ INSTALLED_APPS = [
     'checkout',
     'profiles1',
     'reviews',
- 
 ]
 
 MIDDLEWARE = [
@@ -173,7 +172,7 @@ STATICFILES_DIRS = [BASE_DIR/'static/']
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media/images')
 
-if  'USE_AWS' in os.environ:
+if 'USE_AWS' in os.environ:
     # Cache control
     AWS_S3_OBJECT_PARAMETERS = {
         'Expires': 'Thu, 31 Dec 2099 20:00:00 GMT',
@@ -207,6 +206,7 @@ STRIPE_CURRENCY = 'gbp'
 STRIPE_PUBLIC_KEY = os.getenv('STRIPE_PUBLIC_KEY', '')
 STRIPE_SECRET_KEY = os.getenv('STRIPE_SECRET_KEY', '')
 STRIPE_WH_SECRET = os.getenv('STRIPE_WH_SECRET', '')
+
 
 if 'DEVELOPMENT' in os.environ:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'

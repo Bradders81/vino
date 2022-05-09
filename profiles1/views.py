@@ -37,8 +37,7 @@ def delete_user(request, username):
     """
     user = User.objects.get(username=username)
     if request.user.is_superuser:
-        messages.success(request, 'Only customers can delete their account /n'
-                         'this way. Please contact your site Administrator')
+        messages.success(request, 'Not allowedcontact your site Admin')
     else:
         user.delete()
         messages.success(request, f'{user.username} account deleted!')
@@ -49,9 +48,9 @@ def delete_user(request, username):
 def order_history(request, order_number):
 
     """
-    Used to display past orders to the user superusers to make 
+    Used to display past orders to the user superusers to make
     sure the site always has at least 1 superuser, superusers cannot
-    delete their account 
+    delete their account
     """
     order = get_object_or_404(Order, order_number=order_number)
 

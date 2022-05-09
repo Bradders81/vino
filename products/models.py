@@ -1,12 +1,8 @@
 from django.db import models
-
 import uuid
 
 
 # Create your models here.
-
-
-
 class Wine(models.Model):
     """
     Model of the wines in the database
@@ -37,4 +33,3 @@ class Wine(models.Model):
 
     def __str__(self):
         return self.wine_name
-

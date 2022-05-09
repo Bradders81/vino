@@ -2,6 +2,7 @@ from django.conf import settings
 from django.shortcuts import get_object_or_404
 from products.models import Wine
 
+
 def basket_contents(request):
     """
     Handles the basket total on the basket page
@@ -28,4 +29,3 @@ def basket_contents(request):
     }
 
     return context
-

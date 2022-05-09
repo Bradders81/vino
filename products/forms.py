@@ -1,8 +1,8 @@
 from django import forms
 from .models import Wine
 
-class ProductForm(forms.ModelForm):
 
+class ProductForm(forms.ModelForm):
     """
     Form for superuser/site owner to
     update products.
@@ -11,4 +11,3 @@ class ProductForm(forms.ModelForm):
     class Meta:
         model = Wine
         fields = '__all__'
-
