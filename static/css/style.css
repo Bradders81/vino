@@ -161,11 +161,11 @@ box-shadow: #d8d2d2 4px 4px 4px 4px;
 }
 
 /*----- Form Templates -----*/
-.form-container {
+/* .form-container {
     display: flex;
     flex-direction: column;
     height: 100vh;
-}
+} */
 
 .form-container {
     margin-top: 5vh;
@@ -192,7 +192,7 @@ footer {
  }
 
 #footer-style div{
-    height: 40px;
+    height: auto;
     background-color: #8a0c0c;
     color: #fff;
     
