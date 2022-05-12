@@ -38,7 +38,7 @@ def product_reviews(request, wine_id):
     """
     reviews = UserReview.objects.filter(wine_id=wine_id)
     bottle = wine_id
-
+    
     context = {'reviews': reviews, 'bottle': bottle, }
 
     return render(request, 'reviews/product_reviews.html', context)
@@ -49,7 +49,7 @@ def review_details(request, review_id):
     A view to display the full details of a review to a user
     in isolation to the other reviews
     """
-
+    
     bottle = get_object_or_404(UserReview, id=review_id)
     review_id = review_id
 
@@ -80,3 +80,13 @@ def edit_review(request, review_id):
     context = {'form': form, 'review': review, }
 
     return render(request, 'reviews/edit_review.html', context)
+
+@login_required
+def delete_review(request, pk):
+    """
+    Allows a user to delete a review
+    """
+    review = get_object_or_404(UserReview, id=pk)
+    review.delete()
+    messages.success(request, 'Your Review has been deleted!')
+    return redirect(reverse('reviews'))
